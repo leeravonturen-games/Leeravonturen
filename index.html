@@ -1,0 +1,2531 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Leeravonturen – Spelletjes</title>
+</head>
+<body>
+<div id="leeravonturen-fullscreen-embed">
+  <main class="la-site">
+    <div id="la-embed-root">
+      <style>
+        html, body {
+          margin: 0 !important;
+          padding: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          overflow: hidden !important;
+        }
+
+        #leeravonturen-fullscreen-embed {
+          position: fixed !important;
+          inset: 0 !important;
+          width: 100vw !important;
+          height: 100vh !important;
+          overflow: hidden !important;
+          background: #edf7d1 !important;
+          z-index: 2147483647 !important;
+          margin: 0 !important;
+          padding: 0 !important;
+        }
+
+        body.la-overlay-active > *:not(#leeravonturen-fullscreen-embed) {
+          display: none !important;
+        }
+
+        #leeravonturen-fullscreen-embed .la-site,
+        #la-embed-root {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          display: block;
+          margin: 0;
+          padding: 0;
+        }
+
+        #la-embed-root {
+          --page-bg-url: url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-high.png?enable-io=true&width=1920");
+          --dialog-bg-url: url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-jungel-tv-high.png?enable-io=true&width=816");
+          --hud-bg-url: url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-2025-malavira-high.png");
+          --card-back-url: url("https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravoturen-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780");
+          --coin-url: url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-coint-high.png?enable-io=true&width=816");
+          --answer-board-url: url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-achtergrond-bord-high.jpg?enable-io=true&width=816");
+          --text-outline: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000, 2px 2px 0 #000;
+          color: #fff;
+          font-family: "Nunito", system-ui, sans-serif;
+          background: radial-gradient(circle at center, rgba(13,36,22,.72), rgba(5,12,8,.94)), var(--page-bg-url) center top / cover no-repeat;
+        }
+
+        #la-embed-root, #la-embed-root * { box-sizing: border-box; }
+
+        #la-embed-root .page {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: stretch;
+          padding: 0;
+          background: radial-gradient(circle at center, rgba(13,36,22,.58), rgba(5,12,8,.88)), var(--page-bg-url) center top / cover no-repeat;
+        }
+
+        #la-embed-root .game-shell {
+          width: 100%;
+          height: 100%;
+          min-height: 100%;
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          background: transparent;
+          box-shadow: 0 18px 60px rgba(0,0,0,.32);
+        }
+
+        #la-embed-root .la-topbar {
+          width: 100%;
+          flex: 0 0 auto;
+          background: rgba(10,39,24,.96);
+          overflow: hidden;
+        }
+
+        #la-embed-root .la-nav {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 18px;
+          padding: 12px 18px;
+          flex-wrap: nowrap;
+        }
+
+        #la-embed-root .la-brand {
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          color: #fff;
+          text-decoration: none;
+          min-width: 0;
+        }
+
+        #la-embed-root .la-logo-mark {
+          width: 56px;
+          height: auto;
+          display: block;
+          flex: 0 0 auto;
+        }
+
+        #la-embed-root .la-brand small {
+          display: block;
+          color: #f4d34b;
+          font-size: 12px;
+          font-weight: 900;
+          letter-spacing: .06em;
+          text-transform: uppercase;
+          line-height: 1.1;
+        }
+
+        #la-embed-root .la-brand span {
+          display: block;
+          font-size: 16px;
+          font-weight: 900;
+          line-height: 1.15;
+          color: #fff;
+          white-space: nowrap;
+        }
+
+        #la-embed-root .la-nav-links {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          flex-wrap: wrap;
+          flex: 1 1 auto;
+        }
+
+        #la-embed-root .la-nav-links a {
+          color: #edf7ea;
+          text-decoration: none;
+          font-weight: 800;
+          padding: 10px 14px;
+          border-radius: 999px;
+          transition: background .15s ease, color .15s ease, transform .15s ease;
+        }
+
+        #la-embed-root .la-nav-links a:hover,
+        #la-embed-root .la-nav-links a.active {
+          background: #f4d34b;
+          color: #11220f;
+          transform: translateY(-1px);
+        }
+
+        #la-embed-root .la-login-actions {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
+
+        #la-embed-root .la-cta-outline,
+        #la-embed-root .la-cta-small {
+          text-decoration: none;
+          font-weight: 900;
+          border-radius: 999px;
+          padding: 10px 18px;
+          transition: transform .15s ease, filter .15s ease;
+          white-space: nowrap;
+        }
+
+        #la-embed-root .la-cta-outline {
+          color: #fff;
+          border: 2px solid rgba(255,255,255,.55);
+          background: transparent;
+        }
+
+        #la-embed-root .la-cta-small {
+          color: #11220f;
+          background: #f4d34b;
+        }
+
+        #la-embed-root .la-cta-outline:hover,
+        #la-embed-root .la-cta-small:hover {
+          transform: translateY(-1px);
+          filter: brightness(1.04);
+        }
+
+        #la-embed-root #la-game-fullscreen {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          display: flex;
+          overflow: hidden;
+        }
+
+        #la-embed-root .scene {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          background: radial-gradient(circle at center, rgba(13,36,22,.22), rgba(5,12,8,.42)), var(--page-bg-url) center top / cover no-repeat;
+          overflow: hidden;
+          isolation: isolate;
+        }
+
+        #la-embed-root .game-logo {
+          position: absolute;
+          left: 50%;
+          top: -1.1%;
+          transform: translateX(-50%);
+          width: min(27%, 340px);
+          z-index: 5;
+          display: flex;
+          justify-content: center;
+          pointer-events: none;
+        }
+
+        #la-embed-root .game-logo img {
+          width: 100%;
+          height: auto;
+          display: block;
+          filter: drop-shadow(0 10px 22px rgba(0,0,0,.42));
+          user-select: none;
+          -webkit-user-drag: none;
+        }
+
+        #la-embed-root .play-area {
+          position: absolute;
+          left: 50%;
+          top: 26.8%;
+          transform: translateX(-50%);
+          width: min(90%, 1180px);
+          height: 69%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          z-index: 3;
+          padding-bottom: 72px;
+          transition: padding-bottom .2s ease, top .2s ease;
+        }
+
+        #la-embed-root .play-area.controls-on { padding-bottom: 148px; }
+        #la-embed-root .hud {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+          gap: 12px;
+          flex: 0 0 auto;
+        }
+
+        #la-embed-root .level-item,
+        #la-embed-root .wood-btn,
+        #la-embed-root .menu-btn,
+        #la-embed-root .menu-mini-link {
+          background: var(--hud-bg-url) center / 100% 100% no-repeat;
+          color: #fff;
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          text-align: center;
+          border: 0;
+        }
+
+        #la-embed-root .level-item {
+          min-height: clamp(58px, 6.4vw, 80px);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 4px;
+          padding: 6px 10px;
+          font-size: clamp(16px, 1.55vw, 25px);
+          line-height: 1;
+          white-space: nowrap;
+          user-select: none;
+        }
+
+        #la-embed-root .stage {
+          width: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #la-embed-root .stage.hidden { display: none; }
+        #la-embed-root .board-wrap {
+          width: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          display: grid;
+          place-items: center;
+          overflow: hidden;
+        }
+
+        #la-embed-root #memory-stage .board-wrap {
+          place-items: start center;
+          padding-top: 8px;
+          padding-bottom: 30px;
+        }
+
+        #la-embed-root #memory-stage { justify-content: flex-start; }
+        #la-embed-root #memory-stage .board { align-content: start; margin-top: 0; }
+
+        #la-embed-root .board {
+          display: grid;
+          justify-content: center;
+          align-content: center;
+          gap: 12px;
+          width: fit-content;
+          max-width: 100%;
+          margin: 0 auto;
+        }
+
+        #la-embed-root .card {
+          position: relative;
+          width: 120px;
+          height: 120px;
+          border: 0;
+          background: transparent;
+          padding: 0;
+          cursor: pointer;
+          perspective: 1000px;
+        }
+
+        #la-embed-root .inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          transform-style: preserve-3d;
+          transition: transform .45s ease;
+        }
+
+        #la-embed-root .card.open .inner,
+        #la-embed-root .card.match .inner { transform: rotateY(180deg); }
+
+        #la-embed-root .face {
+          position: absolute;
+          inset: 0;
+          border-radius: 14px;
+          backface-visibility: hidden;
+          overflow: hidden;
+          box-shadow: 0 8px 18px rgba(0,0,0,.28);
+        }
+
+        #la-embed-root .back {
+          background: var(--card-back-url) center / cover no-repeat;
+          border: 3px solid rgba(52, 31, 12, .9);
+        }
+
+        #la-embed-root .front {
+          transform: rotateY(180deg);
+          background: transparent;
+          border: 3px solid rgba(52, 31, 12, .9);
+          display: grid;
+          place-items: center;
+          padding: 0;
+        }
+
+        #la-embed-root .front img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+          filter: drop-shadow(0 7px 10px rgba(0,0,0,.18));
+          user-select: none;
+          -webkit-user-drag: none;
+          pointer-events: none;
+        }
+
+        #la-embed-root .memory-controls {
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translateX(-50%);
+          width: 100%;
+          display: none;
+          justify-content: center;
+          align-items: center;
+          gap: 16px;
+          flex-wrap: wrap;
+          z-index: 4;
+        }
+
+        #la-embed-root .memory-controls.visible { display: flex; }
+        #la-embed-root .top-menu-home {
+          position: absolute;
+          left: 18px;
+          top: 14px;
+          z-index: 6;
+          display: none;
+          min-width: 190px;
+          min-height: 56px;
+          padding: 6px 14px;
+          font-size: clamp(16px, 1.35vw, 20px);
+        }
+
+        #la-embed-root .scene.show-top-menu .top-menu-home {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #la-embed-root .count-wrap,
+        #la-embed-root .letters-wrap,
+        #la-embed-root .sound-wrap,
+        #la-embed-root .animalword-wrap,
+        #la-embed-root .letterdrag-wrap {
+          width: 100%;
+          flex: 1 1 auto;
+          min-height: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding-top: 0;
+          padding-bottom: 6px;
+        }
+
+        #la-embed-root .sound-wrap { gap: 10px; padding-top: 2px; }
+        #la-embed-root #sound-stage,
+        #la-embed-root #animalword-stage,
+        #la-embed-root #letterdrag-stage { justify-content: flex-start; }
+
+        #la-embed-root .sound-toprow {
+          width: min(82%, 860px);
+          display: grid;
+          grid-template-columns: 180px minmax(320px, 1fr) 180px;
+          align-items: center;
+          gap: 10px;
+          margin-top: 2px;
+        }
+
+        #la-embed-root .sound-topspacer { width: 100%; height: 1px; }
+
+        #la-embed-root .count-question,
+        #la-embed-root .letters-question,
+        #la-embed-root .sound-question,
+        #la-embed-root .animalword-question,
+        #la-embed-root .letterdrag-question {
+          width: min(58%, 640px);
+          min-height: 74px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 8px 18px;
+          background: var(--hud-bg-url) center / 100% 100% no-repeat;
+          text-align: center;
+          color: #fff;
+          font-size: clamp(22px, 2.25vw, 34px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          line-height: 1.05;
+          margin-top: 4px;
+        }
+
+        #la-embed-root .sound-question { width: 100%; min-height: 66px; margin-top: 0; font-size: clamp(22px, 2vw, 30px); }
+        #la-embed-root .count-answers {
+          width: min(82%, 700px);
+          display: grid;
+          grid-template-columns: repeat(3, minmax(140px, 170px));
+          justify-content: center;
+          align-items: center;
+          justify-items: center;
+          gap: 14px;
+          margin-top: 2px;
+        }
+
+        #la-embed-root .letters-answers {
+          width: min(78%, 720px);
+          max-width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 164px);
+          justify-content: center;
+          align-items: center;
+          justify-items: center;
+          gap: 14px;
+          margin-top: 2px;
+        }
+
+        #la-embed-root .sound-answers {
+          width: min(78%, 720px);
+          max-width: 100%;
+          display: grid;
+          grid-template-columns: repeat(2, 164px);
+          justify-content: center;
+          align-items: center;
+          justify-items: center;
+          gap: 12px;
+          margin-top: 0;
+        }
+
+        #la-embed-root .answer-btn,
+        #la-embed-root .letters-answer-btn,
+        #la-embed-root .sound-answer-btn {
+          background: none;
+          border: 0;
+          padding: 0;
+          cursor: pointer;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          width: 100%;
+          transition: transform .15s ease, filter .15s ease;
+        }
+
+        #la-embed-root .answer-btn:hover,
+        #la-embed-root .letters-answer-btn:hover,
+        #la-embed-root .sound-answer-btn:hover,
+        #la-embed-root .animalword-letter:hover {
+          transform: translateY(-4px) scale(1.02);
+          filter: brightness(1.06);
+        }
+
+        #la-embed-root .answer-btn.correct .answer-card,
+        #la-embed-root .letters-answer-btn.correct .answer-card,
+        #la-embed-root .sound-answer-btn.correct .sound-answer-card {
+          filter: drop-shadow(0 0 18px rgba(79,219,96,.6)) drop-shadow(0 10px 16px rgba(0,0,0,.25));
+        }
+
+        #la-embed-root .answer-btn.wrong .answer-card,
+        #la-embed-root .letters-answer-btn.wrong .answer-card,
+        #la-embed-root .sound-answer-btn.wrong .sound-answer-card {
+          filter: drop-shadow(0 0 18px rgba(255,82,82,.58)) drop-shadow(0 10px 16px rgba(0,0,0,.25));
+        }
+
+        #la-embed-root .answer-card {
+          position: relative;
+          width: 164px;
+          height: 164px;
+          border-radius: 18px;
+          overflow: hidden;
+          filter: drop-shadow(0 10px 16px rgba(0,0,0,.25));
+        }
+
+        #la-embed-root .letters-answers .answer-card { width: 154px; height: 154px; }
+        #la-embed-root .letters-answer-btn { width: 164px; justify-self: center; }
+
+        #la-embed-root .answer-card::before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: var(--answer-board-url) center / cover no-repeat;
+          border: 3px solid rgba(52,31,12,.92);
+          border-radius: 18px;
+          box-shadow: inset 0 0 0 2px rgba(255,255,255,.06);
+        }
+
+        #la-embed-root .answer-value {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transform: translate(-50%, -50%);
+          color: #fff;
+          font-size: clamp(34px, 3vw, 50px);
+          font-weight: 900;
+          line-height: 1;
+          text-shadow: var(--text-outline);
+          pointer-events: none;
+        }
+
+        #la-embed-root .answer-btn[disabled],
+        #la-embed-root .letters-answer-btn[disabled],
+        #la-embed-root .sound-answer-btn[disabled],
+        #la-embed-root .animalword-letter[disabled] {
+          opacity: .65;
+          pointer-events: none;
+        }
+
+        #la-embed-root .sound-answer-card,
+        #la-embed-root .animalword-preview {
+          position: relative;
+          border-radius: 18px;
+          overflow: hidden;
+          background: var(--answer-board-url) center / cover no-repeat;
+          border: 3px solid rgba(52,31,12,.92);
+          box-shadow: 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+        }
+
+        #la-embed-root .sound-answer-card { width: 152px; height: 152px; }
+        #la-embed-root .sound-answer-btn { width: 164px; justify-self: center; }
+
+        #la-embed-root .letterdrag-main {
+          width: min(82%, 900px);
+          display: grid;
+          grid-template-columns: 170px minmax(0, 1fr);
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+          margin-top: 6px;
+        }
+
+        #la-embed-root .letterdrag-letterzone {
+          width: 170px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+          justify-self: center;
+        }
+
+        #la-embed-root .letterdrag-letter {
+          width: 150px;
+          height: 150px;
+          border-radius: 22px;
+          background: var(--answer-board-url) center / cover no-repeat;
+          border: 3px solid rgba(52,31,12,.92);
+          box-shadow: 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: clamp(54px, 4vw, 76px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          cursor: grab;
+          touch-action: none;
+          user-select: none;
+          position: relative;
+          z-index: 2;
+          transition: transform .15s ease, filter .15s ease;
+        }
+
+        #la-embed-root .letterdrag-letter.dragging { filter: brightness(1.08); cursor: grabbing; }
+
+        #la-embed-root .letterdrag-targets {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(3, 158px);
+          justify-content: center;
+          justify-items: center;
+          align-items: stretch;
+          gap: 14px;
+        }
+
+        #la-embed-root .letterdrag-target {
+          position: relative;
+          width: 158px;
+          min-height: 196px;
+          border-radius: 20px;
+          background: var(--answer-board-url) center / cover no-repeat;
+          border: 3px solid rgba(52,31,12,.92);
+          box-shadow: 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          padding: 10px 8px 12px;
+          transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+        }
+
+        #la-embed-root .letterdrag-target.active {
+          box-shadow: 0 0 0 3px rgba(247,201,72,.42), 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+          transform: translateY(-2px);
+        }
+
+        #la-embed-root .letterdrag-target.correct {
+          box-shadow: 0 0 0 3px rgba(79,219,96,.52), 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+        }
+
+        #la-embed-root .letterdrag-target.wrong {
+          box-shadow: 0 0 0 3px rgba(255,82,82,.48), 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+        }
+
+        #la-embed-root .letterdrag-targetimg {
+          width: 100%;
+          height: 116px;
+          display: grid;
+          place-items: center;
+        }
+
+        #la-embed-root .letterdrag-targetimg img,
+        #la-embed-root .sound-answer-image img,
+        #la-embed-root .animalword-preview img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          display: block;
+          filter: drop-shadow(0 7px 10px rgba(0,0,0,.18));
+          user-select: none;
+          -webkit-user-drag: none;
+          pointer-events: none;
+        }
+
+        #la-embed-root .letterdrag-targetlabel {
+          margin-top: 8px;
+          text-align: center;
+          color: #fff;
+          font-size: clamp(15px, 1.08vw, 18px);
+          font-weight: 900;
+          line-height: 1.05;
+          text-shadow: var(--text-outline);
+          text-transform: capitalize;
+          min-height: 34px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #la-embed-root .animalword-main {
+          width: min(86%, 900px);
+          display: grid;
+          grid-template-columns: 180px minmax(0, 1fr);
+          align-items: center;
+          justify-content: center;
+          gap: 18px;
+          margin-top: 2px;
+        }
+
+        #la-embed-root .animalword-preview {
+          width: 180px;
+          height: 180px;
+          display: grid;
+          place-items: center;
+          padding: 10px;
+          flex: 0 0 auto;
+        }
+
+        #la-embed-root .animalword-wordside {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 12px;
+        }
+
+        #la-embed-root .sound-answer-image {
+          position: absolute;
+          top: 8px;
+          left: 8px;
+          right: 8px;
+          bottom: 32px;
+          display: grid;
+          place-items: center;
+        }
+
+        #la-embed-root .sound-answer-label {
+          position: absolute;
+          left: 6px;
+          right: 6px;
+          bottom: 7px;
+          text-align: center;
+          color: #fff;
+          font-size: clamp(13px, 1vw, 16px);
+          font-weight: 900;
+          line-height: 1;
+          text-shadow: var(--text-outline);
+          pointer-events: none;
+          text-transform: capitalize;
+        }
+
+        #la-embed-root .sound-replay,
+        #la-embed-root .animalword-reset {
+          min-width: 172px;
+          min-height: 48px;
+          font-size: clamp(15px, 1.1vw, 18px);
+          margin: 0;
+        }
+
+        #la-embed-root .sound-replay { justify-self: start; }
+        #la-embed-root .animalword-reset { align-self: center; }
+        #la-embed-root .letterdrag-wrap .animalword-bottom { margin-top: 8px; }
+        #la-embed-root .letterdrag-wrap .letters-help { margin: 0; text-align: center; }
+
+        #la-embed-root .animalword-slots {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 8px;
+          min-height: 58px;
+        }
+
+        #la-embed-root .animalword-slot {
+          width: 54px;
+          height: 58px;
+          border-radius: 14px;
+          background: rgba(0,0,0,.26);
+          border: 2px solid rgba(255,255,255,.18);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #fff;
+          font-size: clamp(24px, 2vw, 32px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          box-shadow: inset 0 2px 6px rgba(0,0,0,.28);
+        }
+
+        #la-embed-root .animalword-slot.filled {
+          background: rgba(247,201,72,.22);
+          border-color: rgba(247,201,72,.78);
+        }
+
+        #la-embed-root .animalword-letterbank {
+          width: min(82%, 760px);
+          display: grid;
+          grid-template-columns: repeat(5, minmax(72px, 92px));
+          justify-content: center;
+          gap: 10px;
+        }
+
+        #la-embed-root .animalword-letter {
+          min-width: 72px;
+          min-height: 72px;
+          background: var(--answer-board-url) center / cover no-repeat;
+          border: 3px solid rgba(52,31,12,.92);
+          border-radius: 18px;
+          color: #fff;
+          font-size: clamp(24px, 2vw, 32px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          box-shadow: 0 10px 16px rgba(0,0,0,.25), inset 0 0 0 2px rgba(255,255,255,.06);
+          cursor: pointer;
+          transition: transform .15s ease, filter .15s ease, opacity .15s ease;
+        }
+
+        #la-embed-root .count-help,
+        #la-embed-root .letters-help,
+        #la-embed-root .letters-progress,
+        #la-embed-root .game-xptext {
+          color: #fff;
+          font-size: clamp(14px, 1.1vw, 17px);
+          font-weight: 800;
+          text-shadow: var(--text-outline);
+          opacity: .96;
+          letter-spacing: .01em;
+          margin-top: 2px;
+        }
+
+        #la-embed-root .game-xpbar-wrap,
+        #la-embed-root .letters-bottom,
+        #la-embed-root .sound-bottom,
+        #la-embed-root .animalword-bottom {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 5px;
+          margin-top: 0;
+        }
+
+        #la-embed-root #memory-stage .game-xpbar-wrap { margin-top: 12px; padding-bottom: 14px; }
+        #la-embed-root .letters-next { display: none; min-width: 180px; }
+        #la-embed-root .letters-next.show { display: inline-flex; }
+        #la-embed-root .letters-bottom .letters-xpbar,
+        #la-embed-root .animalword-bottom .letters-xpbar { width: min(52%, 410px); }
+        #la-embed-root .letters-bottom .letters-levelbar,
+        #la-embed-root .animalword-bottom .letters-levelbar { width: min(56%, 470px); }
+        #la-embed-root .sound-bottom .letters-xpbar { width: min(48%, 360px); }
+        #la-embed-root .sound-bottom .letters-levelbar { width: min(52%, 410px); }
+
+        #la-embed-root .letters-bottom .letters-progress,
+        #la-embed-root .letters-bottom .letters-help,
+        #la-embed-root .sound-bottom .letters-progress,
+        #la-embed-root .sound-bottom .letters-help,
+        #la-embed-root .animalword-bottom .letters-progress,
+        #la-embed-root .animalword-bottom .letters-help {
+          margin-top: 0;
+          line-height: 1.05;
+        }
+
+        #la-embed-root .letters-bottom .letters-help,
+        #la-embed-root .animalword-bottom .letters-help { margin-bottom: 4px; }
+        #la-embed-root .sound-bottom .letters-help { margin-bottom: 2px; }
+
+        #la-embed-root .game-xpbar,
+        #la-embed-root .letters-xpbar {
+          width: min(60%, 460px);
+          height: 14px;
+          border-radius: 999px;
+          background: rgba(0,0,0,.38);
+          overflow: hidden;
+          box-shadow: inset 0 2px 6px rgba(0,0,0,.35);
+        }
+
+        #la-embed-root .game-xpfill,
+        #la-embed-root .letters-xpfill {
+          width: 0%;
+          height: 100%;
+          background: linear-gradient(90deg, #F7C948, #FFD700);
+          transition: width .2s ease;
+        }
+
+        #la-embed-root .game-levelbar,
+        #la-embed-root .letters-levelbar {
+          width: min(62%, 520px);
+          display: flex;
+          gap: 6px;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: nowrap;
+        }
+
+        #la-embed-root .game-leveldot,
+        #la-embed-root .letters-leveldot {
+          flex: 1 1 0;
+          height: 10px;
+          border-radius: 999px;
+          background: rgba(255,255,255,.24);
+          transition: transform .15s ease, background .15s ease, opacity .15s ease;
+        }
+
+        #la-embed-root .game-leveldot.active,
+        #la-embed-root .letters-leveldot.active {
+          background: linear-gradient(90deg, #F7C948, #FFD700);
+          transform: translateY(-1px);
+          opacity: 1;
+        }
+
+        #la-embed-root .wood-btn,
+        #la-embed-root .menu-btn {
+          appearance: none;
+          cursor: pointer;
+          min-width: clamp(180px, 18vw, 240px);
+          min-height: clamp(58px, 6vw, 78px);
+          padding: 6px 14px;
+          font-size: clamp(17px, 1.6vw, 22px);
+          line-height: 1;
+          transition: filter .15s ease, transform .15s ease, opacity .15s ease;
+          touch-action: manipulation;
+        }
+
+        #la-embed-root .wood-btn:active,
+        #la-embed-root .menu-btn:active,
+        #la-embed-root .menu-mini-link:active { transform: translateY(1px); }
+
+        #la-embed-root .wood-btn[disabled],
+        #la-embed-root .menu-btn[disabled] {
+          opacity: .55;
+          filter: grayscale(.25) saturate(.55);
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+
+        #la-embed-root .bubble {
+          position: absolute;
+          left: 50%;
+          top: 21.5%;
+          transform: translateX(-50%);
+          background: rgba(255,255,255,.96);
+          color: #11220f;
+          border-radius: 18px;
+          padding: 10px 16px;
+          font-size: clamp(16px, 1.8vw, 28px);
+          font-weight: 900;
+          box-shadow: 0 12px 24px rgba(0,0,0,.22);
+          z-index: 4;
+          opacity: 0;
+          pointer-events: none;
+          transition: opacity .15s ease, transform .15s ease;
+        }
+
+        #la-embed-root .bubble.show {
+          opacity: 1;
+          transform: translateX(-50%) translateY(-4px);
+        }
+
+        #la-embed-root .memory-typed {
+          position: absolute;
+          right: 0;
+          top: 72px;
+          width: min(26%, 280px);
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 6px 12px;
+          background: var(--hud-bg-url) center / 100% 100% no-repeat;
+          color: #fff;
+          text-align: center;
+          font-size: clamp(14px, 1.2vw, 20px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          opacity: 0;
+          pointer-events: none;
+          transform: translateY(-4px);
+          transition: opacity .18s ease, transform .18s ease;
+          z-index: 4;
+        }
+
+        #la-embed-root .memory-typed.show {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        #la-embed-root .overlay {
+          position: absolute;
+          inset: 0;
+          display: none;
+          place-items: center;
+          background: rgba(0,0,0,.48);
+          z-index: 8;
+        }
+
+        #la-embed-root .overlay.show { display: grid; }
+        #la-embed-root .dialog {
+          width: min(54%, 340px);
+          background: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.18)), var(--dialog-bg-url) 52% 42% / 110% 112% no-repeat;
+          color: #f0fff4;
+          border-radius: 18px;
+          padding: 20px 16px 16px;
+          text-align: center;
+          box-shadow: 0 18px 40px rgba(0,0,0,.42);
+          border: 1px solid rgba(255,255,255,.12);
+        }
+
+        #la-embed-root #memory-win .dialog { background-position: 56% 46%; background-size: 108% 110%; }
+        #la-embed-root #memory-win .dialog h3 { font-size: clamp(18px, 1.9vw, 24px); }
+        #la-embed-root #memory-win .dialog p { margin-bottom: 8px; }
+        #la-embed-root .dialog h3 { margin: 0 0 6px; font-size: clamp(20px, 2.2vw, 28px); }
+        #la-embed-root .dialog p { margin: 0 0 10px; font-size: clamp(14px, 1.35vw, 18px); white-space: pre-line; }
+
+        #la-embed-root .dialog-actions {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+        }
+
+        #la-embed-root .reward-coin {
+          width: min(34%, 108px);
+          aspect-ratio: 1 / 1;
+          margin: 38px auto 8px;
+          background: var(--coin-url) center / contain no-repeat;
+          filter: drop-shadow(0 8px 16px rgba(0,0,0,.35));
+        }
+
+        #la-embed-root .dialog .wood-btn {
+          min-width: clamp(130px, 12vw, 170px);
+          min-height: clamp(42px, 4.6vw, 54px);
+          font-size: clamp(14px, 1.2vw, 17px);
+          padding: 4px 8px;
+        }
+
+        #la-embed-root .start-screen {
+          position: absolute;
+          inset: 0;
+          display: grid;
+          place-items: center;
+          background: linear-gradient(rgba(5,12,8,.55), rgba(5,12,8,.72));
+          z-index: 9;
+        }
+
+        #la-embed-root .start-screen.hide { display: none; }
+        #la-embed-root .start-panel {
+          width: min(62%, 520px);
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 14px;
+          padding: 18px 20px 10px;
+          background: linear-gradient(rgba(0,0,0,.16), rgba(0,0,0,.16)), url("https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-achtergrond-high.png?enable-io=true&width=347") center / 100% 100% no-repeat;
+          border-radius: 20px;
+          box-shadow: 0 18px 40px rgba(0,0,0,.42);
+          border: 1px solid rgba(255,255,255,.12);
+        }
+
+        #la-embed-root .menu-title {
+          font-size: clamp(22px, 2.3vw, 34px);
+          font-weight: 900;
+          text-shadow: var(--text-outline);
+          margin-bottom: 4px;
+          text-align: center;
+        }
+
+        #la-embed-root .menu-subtitle {
+          font-size: clamp(13px, 1.1vw, 16px);
+          margin-bottom: 10px;
+          text-align: center;
+          color: #eef8ef;
+          text-shadow: 0 2px 8px rgba(0,0,0,.45);
+        }
+
+        #la-embed-root .menu-grid { width: 100%; display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+        #la-embed-root .menu-mini-links {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+          margin-top: 4px;
+        }
+
+        #la-embed-root .menu-mini-link {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-width: 132px;
+          min-height: 46px;
+          padding: 6px 12px;
+          text-decoration: none;
+          font-size: 15px;
+          transition: transform .15s ease, filter .15s ease;
+          white-space: nowrap;
+          touch-action: manipulation;
+        }
+
+        #la-embed-root .la-footer {
+          width: 100%;
+          text-align: center;
+          color: #ffffff;
+          font-size: 14px;
+          font-weight: 700;
+          padding: 2px 0 4px;
+          margin-top: -2px;
+          background: #0a2718;
+          border: 0;
+          position: relative;
+          z-index: 2;
+        }
+
+        #la-embed-root .la-footer span { color: #f4d34b; }
+        #la-embed-root .la-footer a { color: #ffffff; text-decoration: none; }
+        #la-embed-root .la-footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 860px) {
+          #la-embed-root .game-shell { width: 100%; min-height: 0; height: 100%; }
+          #la-embed-root .la-nav { flex-wrap: wrap; padding: 10px 12px; gap: 12px; }
+          #la-embed-root .la-logo-mark { width: 46px; }
+          #la-embed-root .la-brand span { font-size: 14px; }
+          #la-embed-root .la-nav-links { gap: 6px; }
+          #la-embed-root .la-nav-links a { padding: 8px 10px; font-size: 14px; }
+          #la-embed-root .la-login-actions { width: 100%; justify-content: flex-end; }
+          #la-embed-root .la-cta-outline,
+          #la-embed-root .la-cta-small { padding: 8px 14px; font-size: 14px; }
+          #la-embed-root .game-logo { top: 0.2%; width: min(46%, 270px); }
+          #la-embed-root .play-area { top: 26.4%; width: 94%; height: 71%; padding-bottom: 66px; }
+          #la-embed-root .play-area.controls-on { padding-bottom: 126px; }
+          #la-embed-root .top-menu-home { left: 10px; top: 10px; min-width: 142px; min-height: 46px; font-size: 15px; }
+          #la-embed-root .hud { gap: 8px; }
+          #la-embed-root .level-item { min-height: 52px; font-size: clamp(13px, 1.9vw, 18px); padding: 4px 6px; }
+          #la-embed-root .bubble { top: 19.2%; }
+          #la-embed-root .memory-typed { right: 0; top: 60px; width: min(40%, 210px); min-height: 40px; font-size: clamp(12px, 3vw, 17px); }
+          #la-embed-root .wood-btn,
+          #la-embed-root .menu-btn { min-width: 150px; min-height: 54px; padding: 4px 10px; font-size: clamp(15px, 3vw, 18px); }
+          #la-embed-root .dialog { width: min(74%, 300px); padding: 14px; }
+          #la-embed-root .dialog .wood-btn { min-width: 124px; min-height: 44px; font-size: 14px; }
+          #la-embed-root .start-panel { width: min(82%, 360px); gap: 10px; padding: 14px 14px 8px; }
+          #la-embed-root .menu-mini-links { gap: 8px; }
+          #la-embed-root .menu-mini-link { min-width: 104px; min-height: 40px; font-size: 13px; padding: 5px 10px; }
+          #la-embed-root .answer-card { width: 104px; height: 104px; border-radius: 14px; }
+          #la-embed-root .answer-value { top: 50%; transform: translate(-50%, -50%); font-size: clamp(20px, 5vw, 30px); }
+          #la-embed-root .count-question,
+          #la-embed-root .letters-question,
+          #la-embed-root .sound-question,
+          #la-embed-root .animalword-question,
+          #la-embed-root .letterdrag-question { width: 88%; min-height: 66px; font-size: clamp(20px, 4.7vw, 30px); margin-top: 2px; }
+          #la-embed-root .sound-toprow { width: 100%; grid-template-columns: 138px minmax(0, 1fr) 138px; gap: 8px; }
+          #la-embed-root .sound-replay { min-width: 138px; min-height: 42px; font-size: 14px; margin-top: 0; }
+          #la-embed-root .sound-question { width: 100%; min-height: 58px; font-size: clamp(18px, 4.2vw, 26px); }
+          #la-embed-root .count-answers { width: 100%; grid-template-columns: repeat(3, minmax(84px, 1fr)); gap: 8px; }
+          #la-embed-root .letters-answers { width: 100%; grid-template-columns: repeat(2, minmax(96px, 120px)); gap: 8px; justify-content: center; justify-items: center; }
+          #la-embed-root .letters-answers .answer-card { width: 100px; height: 100px; }
+          #la-embed-root .letters-answer-btn { width: 100px; }
+          #la-embed-root .sound-answers { width: 100%; grid-template-columns: repeat(2, minmax(96px, 120px)); gap: 8px; justify-content: center; justify-items: center; }
+          #la-embed-root .sound-answer-card { width: 98px; height: 110px; }
+          #la-embed-root .sound-answer-btn { width: 100px; }
+          #la-embed-root .sound-answer-image { bottom: 28px; }
+          #la-embed-root .sound-answer-label { font-size: clamp(10px, 2.7vw, 14px); bottom: 5px; }
+          #la-embed-root .animalword-main { width: 100%; grid-template-columns: 108px minmax(0, 1fr); gap: 10px; }
+          #la-embed-root .letterdrag-main { width: 100%; grid-template-columns: 104px minmax(0, 1fr); gap: 10px; }
+          #la-embed-root .letterdrag-letterzone { width: 104px; gap: 8px; }
+          #la-embed-root .letterdrag-letter { width: 92px; height: 92px; font-size: clamp(34px, 8vw, 52px); }
+          #la-embed-root .letterdrag-targets { grid-template-columns: repeat(2, 104px); justify-content: center; justify-items: center; gap: 8px; }
+          #la-embed-root .letterdrag-target { width: 104px; min-height: 134px; padding: 8px 6px 10px; }
+          #la-embed-root .letterdrag-targetimg { height: 74px; }
+          #la-embed-root .letterdrag-targetlabel { font-size: clamp(12px, 2.9vw, 15px); min-height: 28px; }
+          #la-embed-root .animalword-preview { width: 108px; height: 108px; }
+          #la-embed-root .animalword-slots { width: 100%; gap: 6px; }
+          #la-embed-root .animalword-slot { width: 42px; height: 46px; font-size: clamp(18px, 4vw, 24px); }
+          #la-embed-root .animalword-letterbank { width: 100%; grid-template-columns: repeat(5, minmax(52px, 1fr)); gap: 8px; }
+          #la-embed-root .animalword-letter { min-width: 52px; min-height: 56px; font-size: clamp(18px, 4vw, 24px); }
+          #la-embed-root .animalword-reset { min-width: 146px; min-height: 42px; font-size: 14px; }
+          #la-embed-root .letters-bottom .letters-levelbar,
+          #la-embed-root .letters-bottom .letters-xpbar,
+          #la-embed-root .letters-levelbar,
+          #la-embed-root .letters-xpbar,
+          #la-embed-root .game-xpbar,
+          #la-embed-root .game-levelbar { width: 92%; }
+          #la-embed-root .la-footer { font-size: 12px; line-height: 1.3; padding: 2px 0 4px; }
+        }
+        /* Keep menus and long levels reachable on small and landscape screens. */
+        #la-embed-root .start-screen, #la-embed-root .overlay {
+          overflow-y: auto;
+          padding: 12px;
+          align-items: safe center;
+        }
+        #la-embed-root .start-panel { flex-shrink: 0; }
+        #la-embed-root .play-area { overflow-y: auto; overflow-x: hidden; }
+        #la-embed-root .stage:not(#memory-stage) { flex: 0 0 auto; min-height: 100%; }
+        #la-embed-root #memory-stage .board-wrap { overflow-y: auto; min-height: 120px; }
+        #la-embed-root .letterdrag-letter.dragging { pointer-events: none; }
+        @media (max-width: 860px) {
+          #la-embed-root .sound-toprow { grid-template-columns: 1fr; }
+          #la-embed-root .sound-topspacer { display: none; }
+          #la-embed-root .sound-replay { justify-self: center; }
+          #la-embed-root .animalword-letterbank { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+          #la-embed-root .animalword-letter { min-width: 0; }
+          #la-embed-root .start-panel { width: min(94%, 360px); }
+        }
+      </style>
+
+      <div class="page">
+        <div class="game-shell">
+          <header class="la-topbar">
+            <nav class="la-nav" aria-label="Hoofdmenu">
+              <a class="la-brand" href="#home">
+                <img class="la-logo-mark" src="https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravontruren-banner-high-q3u5eg.png?enable-io=true&width=532" alt="Leeravonturen logo" />
+                <div>
+                  <small>Leeravonturen</small>
+                  <span>Spelletjes</span>
+                </div>
+              </a>
+              <div class="la-nav-links">
+                <a href="#home">Home</a>
+                <a class="active" href="https://www.leeravonturen.nl/leeravonturen-spelletjes-c-2025-leeravonturen">Spelletjes</a>
+                <a href="https://www.leeravonturen.nl/jungletv">JungleTV</a>
+                <a href="#avonturenwinkel">Winkel</a>
+                <a href="https://www.leeravonturen.nl/over-ons">Contact</a>
+              </div>
+              <div class="la-login-actions">
+                <a class="la-cta-outline" href="#">Inloggen</a>
+                <a class="la-cta-small" href="#">Aanmelden</a>
+              </div>
+            </nav>
+          </header>
+
+          <div id="la-game-fullscreen">
+            <div class="scene">
+              <div class="bubble" id="bubble"></div>
+              <button id="top-home-btn" class="wood-btn top-menu-home" type="button">Hoofdmenu</button>
+              <div class="game-logo">
+                <img src="https://primary.jwwb.nl/public/p/d/z/temp-htxbdzflklhibfboioit/leeravonturen-spelletjes-high.png?enable-io=true&width=816" alt="Leeravonturen spelletjes" />
+              </div>
+
+              <div class="play-area" id="play-area">
+                <div class="hud">
+                  <div class="level-item"><span id="hud-l1">Level</span> <span id="hud-v1">1</span></div>
+                  <div class="level-item"><span id="hud-l2">Zetten</span> <span id="hud-v2">0</span></div>
+                  <div class="level-item"><span id="hud-l3">Gevonden</span> <span id="hud-v3">0/0</span></div>
+                </div>
+
+                <div class="memory-typed" id="memory-typed"></div>
+
+                <div class="stage" id="memory-stage">
+                  <div class="board-wrap"><div class="board" id="board" aria-live="polite"></div></div>
+                  <div class="game-xpbar-wrap" id="memory-xp-wrap">
+                    <div class="game-xpbar"><div class="game-xpfill" id="memory-xp-fill"></div></div>
+                    <div class="game-xptext" id="memory-xp-text">XP: 0 / 20</div>
+                    <div class="game-levelbar" id="memory-levelbar"></div>
+                  </div>
+                </div>
+
+                <div class="stage hidden" id="count-stage">
+                  <div class="count-wrap">
+                    <div class="count-question" id="count-question">Wat is 1 + 1?</div>
+                    <div class="count-answers" id="count-answers"></div>
+                    <div class="count-help" id="count-help">Kies het goede antwoord</div>
+                    <div class="game-xpbar-wrap" id="count-xp-wrap">
+                      <div class="game-xpbar"><div class="game-xpfill" id="count-xp-fill"></div></div>
+                      <div class="game-xptext" id="count-xp-text">XP: 0 / 50</div>
+                      <div class="game-levelbar" id="count-levelbar"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage hidden" id="letters-stage">
+                  <div class="letters-wrap">
+                    <div class="letters-question" id="letters-question">Welke letter begint met appel?</div>
+                    <div class="letters-answers" id="letters-answers"></div>
+                    <button id="letters-next-btn" class="wood-btn letters-next" type="button">Verder</button>
+                    <div class="letters-bottom">
+                      <div class="letters-xpbar"><div class="letters-xpfill" id="letters-xp-fill"></div></div>
+                      <div class="letters-progress" id="letters-progress">Level 1 • Vraag 1 / 3</div>
+                      <div class="letters-levelbar" id="letters-levelbar"></div>
+                      <div class="letters-help" id="letters-help">Kies het goede antwoord</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage hidden" id="sound-stage">
+                  <div class="sound-wrap">
+                    <div class="sound-toprow">
+                      <button id="sound-replay-btn" class="wood-btn sound-replay" type="button">🔊 Luister</button>
+                      <div class="sound-question" id="sound-question">Wat hoor je?</div>
+                      <div class="sound-topspacer" aria-hidden="true"></div>
+                    </div>
+                    <div class="sound-answers" id="sound-answers"></div>
+                    <div class="sound-bottom">
+                      <div class="letters-xpbar"><div class="letters-xpfill" id="sound-xp-fill"></div></div>
+                      <div class="letters-progress" id="sound-progress">Level 1 • Vraag 1 / 5</div>
+                      <div class="letters-levelbar" id="sound-levelbar"></div>
+                      <div class="letters-help" id="sound-help">Luister en kies het goede dier</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage hidden" id="animalword-stage">
+                  <div class="animalword-wrap">
+                    <div class="animalword-question" id="animalword-question">Welk dier is dit?</div>
+                    <div class="animalword-main">
+                      <div class="animalword-preview" id="animalword-preview"></div>
+                      <div class="animalword-wordside">
+                        <div class="animalword-slots" id="animalword-slots"></div>
+                        <button id="animalword-reset-btn" class="wood-btn animalword-reset" type="button">Wis woord</button>
+                      </div>
+                    </div>
+                    <div class="animalword-letterbank" id="animalword-letterbank"></div>
+                    <div class="animalword-bottom">
+                      <div class="letters-xpbar"><div class="letters-xpfill" id="animalword-xp-fill"></div></div>
+                      <div class="letters-progress" id="animalword-progress">Level 1 • Vraag 1 / 4</div>
+                      <div class="letters-levelbar" id="animalword-levelbar"></div>
+                      <div class="letters-help" id="animalword-help">Tik de letters van het dier</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="stage hidden" id="letterdrag-stage">
+                  <div class="animalword-wrap letterdrag-wrap">
+                    <div class="letterdrag-question" id="letterdrag-question">Sleep de letter naar het juiste dier</div>
+                    <div class="letterdrag-main">
+                      <div class="letterdrag-letterzone">
+                        <div class="letterdrag-letter" id="letterdrag-letter" draggable="false">A</div>
+                        <div class="letters-help" id="letterdrag-help">Sleep de letter naar het juiste dier</div>
+                      </div>
+                      <div class="letterdrag-targets" id="letterdrag-targets"></div>
+                    </div>
+                    <div class="animalword-bottom">
+                      <div class="letters-xpbar"><div class="letters-xpfill" id="letterdrag-xp-fill"></div></div>
+                      <div class="letters-progress" id="letterdrag-progress">Level 1 • Vraag 1 / 4</div>
+                      <div class="letters-levelbar" id="letterdrag-levelbar"></div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="memory-controls" id="memory-controls">
+                  <button id="restart" class="wood-btn" type="button">Opnieuw</button>
+                  <button id="next" class="wood-btn" type="button" disabled>Volgend level ▶</button>
+                </div>
+              </div>
+
+              <div id="memory-win" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3>Goed gedaan!</h3><p id="memory-win-msg">Op naar level 2!</p><button id="memory-again" class="wood-btn" type="button">Volgend level ▶</button></div></div>
+              <div id="count-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3 id="count-result-title">Goed gedaan!</h3><p id="count-result-text">Op naar de volgende vraag!</p><button id="count-next-btn" class="wood-btn" type="button">Volgende ▶</button></div></div>
+              <div id="letters-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3 id="letters-result-title">Goed gedaan!</h3><p id="letters-result-text">Goed: 0 • Fout: 0</p><div class="dialog-actions"><button id="letters-levelup-btn" class="wood-btn" type="button">Volgend level ▶</button><button id="letters-retry-btn" class="wood-btn" type="button">Opnieuw</button></div></div></div>
+              <div id="letters-step-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3>Goed gedaan!</h3><p id="letters-step-text">Op naar de volgende vraag!</p><button id="letters-step-next-btn" class="wood-btn" type="button">Volgende ▶</button></div></div>
+              <div id="sound-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3 id="sound-result-title">Goed gedaan!</h3><p id="sound-result-text">Goed: 0 • Fout: 0</p><div class="dialog-actions"><button id="sound-levelup-btn" class="wood-btn" type="button">Volgend level ▶</button><button id="sound-retry-btn" class="wood-btn" type="button">Opnieuw</button></div></div></div>
+              <div id="sound-step-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3>Goed gedaan!</h3><p id="sound-step-text">Op naar de volgende vraag!</p><button id="sound-step-next-btn" class="wood-btn" type="button">Volgende ▶</button></div></div>
+              <div id="animalword-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3 id="animalword-result-title">Goed gedaan!</h3><p id="animalword-result-text">Goed: 0 • Fout: 0</p><div class="dialog-actions"><button id="animalword-levelup-btn" class="wood-btn" type="button">Volgend level ▶</button><button id="animalword-retry-btn" class="wood-btn" type="button">Opnieuw</button></div></div></div>
+              <div id="animalword-step-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3>Goed gedaan!</h3><p id="animalword-step-text">Ja, goed gespeld!</p><button id="animalword-step-next-btn" class="wood-btn" type="button">Volgende ▶</button></div></div>
+              <div id="letterdrag-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3 id="letterdrag-result-title">Goed gedaan!</h3><p id="letterdrag-result-text">Goed: 0 • Fout: 0</p><div class="dialog-actions"><button id="letterdrag-levelup-btn" class="wood-btn" type="button">Volgend level ▶</button><button id="letterdrag-retry-btn" class="wood-btn" type="button">Opnieuw</button></div></div></div>
+              <div id="letterdrag-step-result" class="overlay"><div class="dialog"><div class="reward-coin" aria-hidden="true"></div><h3>Goed gedaan!</h3><p id="letterdrag-step-text">Dat is de goede letter!</p><button id="letterdrag-step-next-btn" class="wood-btn" type="button">Volgende ▶</button></div></div>
+
+              <div id="start-screen" class="start-screen">
+                <div class="start-panel">
+                  <div class="menu-title">Hoofdmenu</div>
+                  <div class="menu-subtitle">Kies een spel voor Leeravonturen</div>
+                  <div class="menu-grid">
+                    <button id="menu-memory" class="menu-btn" type="button">Memory spel</button>
+                    <button id="menu-tellen" class="menu-btn" type="button">Tellen spel</button>
+                    <button id="menu-letters" class="menu-btn" type="button">Letters spel</button>
+                    <button id="menu-sound" class="menu-btn" type="button">Wat hoor je?</button>
+                    <button id="menu-animalword" class="menu-btn" type="button">Welk dier is dit?</button>
+                    <button id="menu-letterdrag" class="menu-btn" type="button">Sleep de letter</button>
+                  </div>
+                  <div class="menu-mini-links">
+                    <a class="menu-mini-link" href="https://www.leeravonturen.nl/jungletv">Afleveringen</a>
+                    <a class="menu-mini-link" href="#" data-link="instellingen">Instellingen</a>
+                    <a class="menu-mini-link" href="#" data-link="wereld">Wereld</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <footer class="la-footer">© <span>Leeravonturen.nl</span> · <a href="https://www.leeravonturen.nl/privacyverklaring" target="_blank" rel="noopener">Privacy</a> · <a href="https://www.leeravonturen.nl/gebruikersverklaring" target="_blank" rel="noopener">Gebruikersverklaring</a></footer>
+        </div>
+      </div>
+
+      <script>
+        (function () {
+          const overlay = document.getElementById('leeravonturen-fullscreen-embed');
+          const root = document.getElementById('la-embed-root');
+          if (!overlay || !root) return;
+          if (root.dataset.init === '1') return;
+          root.dataset.init = '1';
+
+          // Cancel delayed feedback when a game is left or restarted.
+          const pendingTimers = new Set();
+          function gameTimeout(callback, delay) {
+            const id = window.setTimeout(function () {
+              pendingTimers.delete(id);
+              callback();
+            }, delay);
+            pendingTimers.add(id);
+            return id;
+          }
+          function cancelGameTimers() {
+            pendingTimers.forEach(function (id) { window.clearTimeout(id); });
+            pendingTimers.clear();
+          }
+
+          function moveOverlayToBody() {
+            if (!document.body) return;
+            if (overlay.parentNode !== document.body) document.body.appendChild(overlay);
+          }
+
+          function getViewportSize() {
+            const vv = window.visualViewport;
+            return {
+              width: vv ? Math.round(vv.width) : window.innerWidth,
+              height: vv ? Math.round(vv.height) : window.innerHeight,
+              top: vv ? Math.round(vv.offsetTop) : 0,
+              left: vv ? Math.round(vv.offsetLeft) : 0
+            };
+          }
+
+          function fixOverlay() {
+            moveOverlayToBody();
+            const vp = getViewportSize();
+            overlay.style.position = 'fixed';
+            overlay.style.setProperty('top', vp.top + 'px', 'important');
+            overlay.style.setProperty('left', vp.left + 'px', 'important');
+            overlay.style.setProperty('width', vp.width + 'px', 'important');
+            overlay.style.setProperty('height', vp.height + 'px', 'important');
+            overlay.style.minHeight = vp.height + 'px';
+            overlay.style.maxHeight = vp.height + 'px';
+            document.body.classList.add('la-overlay-active');
+            document.documentElement.style.overflow = 'hidden';
+            document.body.style.overflow = 'hidden';
+          }
+
+          fixOverlay();
+          window.addEventListener('resize', fixOverlay);
+          window.addEventListener('orientationchange', function () { setTimeout(fixOverlay, 100); });
+          if (window.visualViewport) {
+            window.visualViewport.addEventListener('resize', fixOverlay);
+            window.visualViewport.addEventListener('scroll', fixOverlay);
+          }
+
+          const board = root.querySelector('#board');
+          const hudL1 = root.querySelector('#hud-l1');
+          const hudL2 = root.querySelector('#hud-l2');
+          const hudL3 = root.querySelector('#hud-l3');
+          const hudV1 = root.querySelector('#hud-v1');
+          const hudV2 = root.querySelector('#hud-v2');
+          const hudV3 = root.querySelector('#hud-v3');
+          const bubble = root.querySelector('#bubble');
+          const memoryTyped = root.querySelector('#memory-typed');
+          const playArea = root.querySelector('#play-area');
+          const boardWrap = root.querySelector('.board-wrap');
+          const memoryStage = root.querySelector('#memory-stage');
+          const countStage = root.querySelector('#count-stage');
+          const lettersStage = root.querySelector('#letters-stage');
+          const soundStage = root.querySelector('#sound-stage');
+          const animalwordStage = root.querySelector('#animalword-stage');
+          const letterdragStage = root.querySelector('#letterdrag-stage');
+          const memoryControls = root.querySelector('#memory-controls');
+          const sceneEl = root.querySelector('.scene');
+          const startScreen = root.querySelector('#start-screen');
+
+          const memoryWin = root.querySelector('#memory-win');
+          const memoryWinMsg = root.querySelector('#memory-win-msg');
+          const memoryAgain = root.querySelector('#memory-again');
+          const restartBtn = root.querySelector('#restart');
+          const nextBtn = root.querySelector('#next');
+          const topHomeBtn = root.querySelector('#top-home-btn');
+          const memoryXpWrap = root.querySelector('#memory-xp-wrap');
+          const memoryXpFill = root.querySelector('#memory-xp-fill');
+          const memoryXpText = root.querySelector('#memory-xp-text');
+          const countXpFill = root.querySelector('#count-xp-fill');
+          const countXpText = root.querySelector('#count-xp-text');
+          const memoryLevelbar = root.querySelector('#memory-levelbar');
+          const countLevelbar = root.querySelector('#count-levelbar');
+          const countQuestionEl = root.querySelector('#count-question');
+          const countAnswersEl = root.querySelector('#count-answers');
+          const countHelpEl = root.querySelector('#count-help');
+          const countResult = root.querySelector('#count-result');
+          const countResultTitle = root.querySelector('#count-result-title');
+          const countResultText = root.querySelector('#count-result-text');
+          const countNextBtn = root.querySelector('#count-next-btn');
+          const lettersQuestionEl = root.querySelector('#letters-question');
+          const lettersAnswersEl = root.querySelector('#letters-answers');
+          const lettersNextBtn = root.querySelector('#letters-next-btn');
+          const lettersXpFill = root.querySelector('#letters-xp-fill');
+          const lettersProgress = root.querySelector('#letters-progress');
+          const lettersLevelbar = root.querySelector('#letters-levelbar');
+          const lettersHelp = root.querySelector('#letters-help');
+          const lettersResult = root.querySelector('#letters-result');
+          const lettersResultTitle = root.querySelector('#letters-result-title');
+          const lettersResultText = root.querySelector('#letters-result-text');
+          const lettersLevelupBtn = root.querySelector('#letters-levelup-btn');
+          const lettersRetryBtn = root.querySelector('#letters-retry-btn');
+          const lettersStepResult = root.querySelector('#letters-step-result');
+          const lettersStepText = root.querySelector('#letters-step-text');
+          const lettersStepNextBtn = root.querySelector('#letters-step-next-btn');
+          const soundQuestionEl = root.querySelector('#sound-question');
+          const soundReplayBtn = root.querySelector('#sound-replay-btn');
+          const soundAnswersEl = root.querySelector('#sound-answers');
+          const soundXpFill = root.querySelector('#sound-xp-fill');
+          const soundProgress = root.querySelector('#sound-progress');
+          const soundLevelbar = root.querySelector('#sound-levelbar');
+          const soundHelp = root.querySelector('#sound-help');
+          const soundResult = root.querySelector('#sound-result');
+          const soundResultTitle = root.querySelector('#sound-result-title');
+          const soundResultText = root.querySelector('#sound-result-text');
+          const soundLevelupBtn = root.querySelector('#sound-levelup-btn');
+          const soundRetryBtn = root.querySelector('#sound-retry-btn');
+          const soundStepResult = root.querySelector('#sound-step-result');
+          const soundStepText = root.querySelector('#sound-step-text');
+          const soundStepNextBtn = root.querySelector('#sound-step-next-btn');
+          const animalwordQuestionEl = root.querySelector('#animalword-question');
+          const animalwordPreviewEl = root.querySelector('#animalword-preview');
+          const animalwordSlotsEl = root.querySelector('#animalword-slots');
+          const animalwordLetterbankEl = root.querySelector('#animalword-letterbank');
+          const animalwordResetBtn = root.querySelector('#animalword-reset-btn');
+          const animalwordXpFill = root.querySelector('#animalword-xp-fill');
+          const animalwordProgress = root.querySelector('#animalword-progress');
+          const animalwordLevelbar = root.querySelector('#animalword-levelbar');
+          const animalwordHelp = root.querySelector('#animalword-help');
+          const animalwordResult = root.querySelector('#animalword-result');
+          const animalwordResultTitle = root.querySelector('#animalword-result-title');
+          const animalwordResultText = root.querySelector('#animalword-result-text');
+          const animalwordLevelupBtn = root.querySelector('#animalword-levelup-btn');
+          const animalwordRetryBtn = root.querySelector('#animalword-retry-btn');
+          const animalwordStepResult = root.querySelector('#animalword-step-result');
+          const animalwordStepText = root.querySelector('#animalword-step-text');
+          const animalwordStepNextBtn = root.querySelector('#animalword-step-next-btn');
+          const letterdragQuestionEl = root.querySelector('#letterdrag-question');
+          const letterdragLetterEl = root.querySelector('#letterdrag-letter');
+          const letterdragTargetsEl = root.querySelector('#letterdrag-targets');
+          const letterdragHelpEl = root.querySelector('#letterdrag-help');
+          const letterdragXpFill = root.querySelector('#letterdrag-xp-fill');
+          const letterdragProgress = root.querySelector('#letterdrag-progress');
+          const letterdragLevelbar = root.querySelector('#letterdrag-levelbar');
+          const letterdragResult = root.querySelector('#letterdrag-result');
+          const letterdragResultTitle = root.querySelector('#letterdrag-result-title');
+          const letterdragResultText = root.querySelector('#letterdrag-result-text');
+          const letterdragLevelupBtn = root.querySelector('#letterdrag-levelup-btn');
+          const letterdragRetryBtn = root.querySelector('#letterdrag-retry-btn');
+          const letterdragStepResult = root.querySelector('#letterdrag-step-result');
+          const letterdragStepText = root.querySelector('#letterdrag-step-text');
+          const letterdragStepNextBtn = root.querySelector('#letterdrag-step-next-btn');
+          const menuMemoryButton = root.querySelector('#menu-memory');
+          const menuTellenButton = root.querySelector('#menu-tellen');
+          const menuLettersButton = root.querySelector('#menu-letters');
+          const menuSoundButton = root.querySelector('#menu-sound');
+          const menuAnimalwordButton = root.querySelector('#menu-animalword');
+          const menuLetterdragButton = root.querySelector('#menu-letterdrag');
+
+          const ANIMALS_MASTER = [
+            { label: 'aap', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-aap-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' },
+            { label: 'tijger', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-tijger-2025-malavira-standard.webp' },
+            { label: 'olifant', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-olievant-2025-malavira-standard.webp' },
+            { label: 'leeuw', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-leeuw-2025-malavira-high.webp?enable-io=true&enable=upscale&crop=512%2C512%2Cx0%2Cy0%2Csafe&width=511&height=511' },
+            { label: 'zebra', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-zebra-2025-malavira-standard.webp' },
+            { label: 'krokodil', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-krokedil-2025-malaviraw-standard.webp' },
+            { label: 'papegaai', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-papagaai-2025-malavira-standard.webp' },
+            { label: 'slang', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-slang-2025-malavira-standard.webp' },
+            { label: 'kikker', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-kikker-2025-malavira-standard.webp' },
+            { label: 'vlinder', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-vlinder-2025-malavira-standard.webp' },
+            { label: 'neushoorn', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-neushoorn-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' },
+            { label: 'giraffe', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-giraffe-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' },
+            { label: 'panda', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-panda-2025-malavira-standard.webp' },
+            { label: 'luipaard', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/memory-luipaardleeravonturen-memory-luipaard-2025-malavira-standard.webp' },
+            { label: 'toekan', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memorytoekan-2025-malavira-standard.webp' },
+            { label: 'kameleon', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memorykameleon-2025-malavira-standard.webp' },
+            { label: 'flamingo', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-flamingo-2025-malavira-standard.webp' },
+            { label: 'spin', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-spin-2025-malavira-standard.webp' },
+            { label: 'vleermuis', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-vleermuis-2025-malavira-standard.webp' },
+            { label: 'wasbeer', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-wasbeer-2025-malavira-standard.webp' },
+            { label: 'nijlpaard', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-nijlpaard-2025-malavira-standard.webp' },
+            { label: 'dromedaris', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-drommedatis-2025-malavira-standard.webp' },
+            { label: 'gorilla', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-gorilla-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' },
+            { label: 'oehoe', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-uil-ohoe-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' },
+            { label: 'koala', img: 'https://primary.jwwb.nl/public/y/k/t/temp-xnfypydwgebdhkabbhja/leeravonturen-memory-koala-2025-malavira-high.png?enable-io=true&enable=upscale&crop=1024%2C1024%2Cx0%2Cy0%2Csafe&width=780&height=780' }
+          ];
+
+          const LETTERS_LEVELS = [3,5,7,9,11,13,15,17,19,21];
+          const SOUND_LEVELS = [5,7,9,11,13,15,17,19,21,25];
+          const ANIMALWORD_LEVELS = [4,5,6,7,8,9,10,11,12,13];
+          const LETTERDRAG_LEVELS = [4,5,6,7,8,9,10,11,12,13];
+          const LETTERS_QUESTIONS = [
+            { text: 'Welke letter begint met appel?', answers: ['A','B','C','D'], correct: 0 },
+            { text: 'Welke letter begint met boom?', answers: ['D','B','M','A'], correct: 1 },
+            { text: 'Welke letter begint met kat?', answers: ['S','T','K','P'], correct: 2 },
+            { text: 'Welke letter begint met vis?', answers: ['V','B','F','I'], correct: 0 },
+            { text: 'Welke letter begint met zon?', answers: ['O','S','Z','N'], correct: 2 },
+            { text: 'Welke letter begint met peer?', answers: ['P','R','E','T'], correct: 0 }
+          ];
+
+          const state = {
+            mode: null,
+            audioUnlocked: false,
+            audioCtx: null,
+            memory: { level: 1, pairs: 2, deck: [], open: [], lock: false, found: 0, controlsUnlocked: false, levelCompleted: false },
+            count: { level: 1, round: 0, totalRounds: 5, correct: 0, question: null, answerLocked: false, pendingAction: 'next' },
+            letters: { level: 1, currentQuestion: 0, correct: 0, wrong: 0, xp: 0, session: [], answerLocked: false },
+            sound: { level: 1, currentQuestion: 0, correct: 0, wrong: 0, xp: 0, session: [], answerLocked: false },
+            animalword: { level: 1, currentQuestion: 0, correct: 0, wrong: 0, xp: 0, session: [], answerLocked: false, built: [] },
+            letterdrag: { level: 1, currentQuestion: 0, correct: 0, wrong: 0, xp: 0, session: [], answerLocked: false, dragData: null }
+          };
+
+          function shuffle(arr) {
+            const copy = arr.slice();
+            for (let i = copy.length - 1; i > 0; i -= 1) {
+              const j = Math.floor(Math.random() * (i + 1));
+              const tmp = copy[i];
+              copy[i] = copy[j];
+              copy[j] = tmp;
+            }
+            return copy;
+          }
+
+          function unlockAudio() {
+            try {
+              if (state.audioUnlocked) return;
+              const Ctx = window.AudioContext || window.webkitAudioContext;
+              if (Ctx) {
+                state.audioCtx = new Ctx();
+                if (state.audioCtx.state === 'suspended') state.audioCtx.resume();
+              }
+              state.audioUnlocked = true;
+            } catch (error) {}
+          }
+
+          function speak(text) {
+            try {
+              if (!('speechSynthesis' in window)) return;
+              window.speechSynthesis.cancel();
+              const msg = new SpeechSynthesisUtterance(text);
+              msg.lang = 'nl-NL';
+              msg.rate = 0.85;
+              msg.pitch = 1.15;
+              window.speechSynthesis.speak(msg);
+            } catch (error) {}
+          }
+
+          function playTone(freq, duration, type, gainValue) {
+            try {
+              unlockAudio();
+              if (!state.audioCtx) return;
+              const now = state.audioCtx.currentTime;
+              const osc = state.audioCtx.createOscillator();
+              const gain = state.audioCtx.createGain();
+              osc.type = type || 'sine';
+              osc.frequency.setValueAtTime(freq, now);
+              gain.gain.setValueAtTime(0.0001, now);
+              gain.gain.exponentialRampToValueAtTime(gainValue || 0.05, now + 0.02);
+              gain.gain.exponentialRampToValueAtTime(0.0001, now + duration);
+              osc.connect(gain);
+              gain.connect(state.audioCtx.destination);
+              osc.start(now);
+              osc.stop(now + duration + 0.02);
+            } catch (error) {}
+          }
+
+          function playWrongSound() { playTone(220, 0.14, 'sawtooth', 0.04); gameTimeout(function () { playTone(170, 0.18, 'sawtooth', 0.04); }, 80); }
+          function playWinSound() { [523,659,784].forEach(function (freq, index) { gameTimeout(function () { playTone(freq, 0.18, 'triangle', 0.05); }, index * 110); }); }
+          function playCoinSound() { playTone(1320, 0.12, 'triangle', 0.06); }
+
+          function showBubble(text) {
+            bubble.textContent = text;
+            bubble.classList.add('show');
+            clearTimeout(showBubble._timeout);
+            showBubble._timeout = gameTimeout(function () { bubble.classList.remove('show'); }, 1200);
+          }
+
+          function showMemoryTyped(text) {
+            if (!memoryTyped) return;
+            memoryTyped.textContent = text;
+            memoryTyped.classList.add('show');
+            clearTimeout(showMemoryTyped._timeout);
+            showMemoryTyped._timeout = gameTimeout(function () { memoryTyped.classList.remove('show'); }, 1400);
+          }
+
+          function setHud(l1, v1, l2, v2, l3, v3) {
+            hudL1.textContent = l1;
+            hudV1.textContent = v1;
+            hudL2.textContent = l2;
+            hudV2.textContent = v2;
+            hudL3.textContent = l3;
+            hudV3.textContent = v3;
+          }
+
+          function renderGameLevelBar(target, activeLevel, totalLevels) {
+            if (!target) return;
+            target.innerHTML = '';
+            for (let i = 1; i <= totalLevels; i += 1) {
+              const dot = document.createElement('div');
+              dot.className = 'game-leveldot' + (i <= activeLevel ? ' active' : '');
+              target.appendChild(dot);
+            }
+          }
+
+          function showMode(mode) {
+            cancelGameTimers();
+            state.mode = mode;
+            memoryStage.classList.toggle('hidden', mode !== 'memory');
+            countStage.classList.toggle('hidden', mode !== 'count');
+            lettersStage.classList.toggle('hidden', mode !== 'letters');
+            soundStage.classList.toggle('hidden', mode !== 'sound');
+            animalwordStage.classList.toggle('hidden', mode !== 'animalword');
+            letterdragStage.classList.toggle('hidden', mode !== 'letterdrag');
+            const showMemoryControls = mode === 'memory' && state.memory.controlsUnlocked;
+            memoryControls.classList.toggle('visible', showMemoryControls);
+            playArea.classList.toggle('controls-on', showMemoryControls);
+            sceneEl.classList.toggle('show-top-menu', ['memory','count','letters','sound','animalword','letterdrag'].indexOf(mode) > -1);
+            if (memoryTyped && mode !== 'memory') {
+              memoryTyped.classList.remove('show');
+              memoryTyped.textContent = '';
+            }
+            applyMemoryBoardFit();
+          }
+
+          function getBestLayout(count, availableWidth, availableHeight) {
+            const mobile = window.innerWidth <= 860;
+            let cols;
+            let preferred;
+            const gap = mobile ? 10 : 12;
+            if (mobile) {
+              if (count <= 4) { cols = 2; preferred = 130; }
+              else if (count <= 8) { cols = 3; preferred = 118; }
+              else if (count <= 12) { cols = 3; preferred = 110; }
+              else if (count <= 16) { cols = 4; preferred = 92; }
+              else if (count <= 20) { cols = 4; preferred = 84; }
+              else { cols = 4; preferred = 76; }
+            } else {
+              if (count <= 4) { cols = 2; preferred = 166; }
+              else if (count <= 8) { cols = 4; preferred = 160; }
+              else if (count <= 12) { cols = 4; preferred = 148; }
+              else if (count <= 16) { cols = 4; preferred = 128; }
+              else if (count <= 20) { cols = 5; preferred = 112; }
+              else { cols = 5; preferred = 98; }
+            }
+            const rows = Math.ceil(count / cols);
+            const sizeByWidth = Math.floor((availableWidth - gap * (cols - 1)) / cols);
+            const sizeByHeight = Math.floor((availableHeight - gap * (rows - 1)) / rows);
+            const size = Math.max(62, Math.min(preferred, sizeByWidth, sizeByHeight));
+            return { cols: cols, size: size, gap: gap };
+          }
+
+          function applyMemoryBoardFit() {
+            if (state.mode !== 'memory') return;
+            const availableHeight = Math.max(100, boardWrap.clientHeight - 38);
+            const layout = getBestLayout(state.memory.deck.length || 4, boardWrap.clientWidth, availableHeight);
+            board.style.gap = layout.gap + 'px';
+            board.style.gridTemplateColumns = 'repeat(' + layout.cols + ', ' + layout.size + 'px)';
+            board.querySelectorAll('.card').forEach(function (card) {
+              card.style.width = layout.size + 'px';
+              card.style.height = layout.size + 'px';
+            });
+          }
+
+          function buildMemoryDeck() {
+            state.memory.pairs = Math.min(Math.max(state.memory.pairs, 2), ANIMALS_MASTER.length);
+            const pool = shuffle(ANIMALS_MASTER).slice(0, state.memory.pairs);
+            state.memory.deck = shuffle(pool.concat(pool)).map(function (item, index) {
+              return { id: index, key: item.label, label: item.label, img: item.img, matched: false };
+            });
+          }
+
+          function updateMemoryXp() {
+            const totalXp = state.memory.pairs * 10;
+            const currentXp = state.memory.found * 10;
+            memoryXpFill.style.width = Math.min(100, (currentXp / totalXp) * 100) + '%';
+            memoryXpText.textContent = 'XP: ' + currentXp + ' / ' + totalXp;
+            renderGameLevelBar(memoryLevelbar, state.memory.found, state.memory.pairs);
+          }
+
+          function updateMemoryHud() {
+            const totalXp = state.memory.pairs * 10;
+            const currentXp = state.memory.found * 10;
+            setHud('Level', String(state.memory.level), 'Gevonden', state.memory.found + '/' + state.memory.pairs, 'XP', currentXp + '/' + totalXp);
+            updateMemoryXp();
+          }
+
+          function renderMemoryBoard() {
+            board.innerHTML = '';
+            state.memory.deck.forEach(function (card) {
+              const button = document.createElement('button');
+              button.type = 'button';
+              button.className = 'card';
+              button.setAttribute('aria-label', card.label);
+              button.innerHTML = '<div class="inner"><div class="face back"></div><div class="face front"><img src="' + card.img + '" alt="' + card.label + '"></div></div>';
+              button.addEventListener('click', function () { onMemoryCard(button, card); });
+              board.appendChild(button);
+            });
+            applyMemoryBoardFit();
+          }
+
+          function buildMemoryLevel() {
+            cancelGameTimers();
+            state.memory.found = 0;
+            state.memory.open = [];
+            state.memory.lock = false;
+            state.memory.levelCompleted = false;
+            nextBtn.disabled = true;
+            memoryTyped.textContent = '';
+            memoryTyped.classList.remove('show');
+            updateMemoryHud();
+            buildMemoryDeck();
+            renderMemoryBoard();
+          }
+
+          function unlockMemoryControls() {
+            if (state.memory.controlsUnlocked) return;
+            state.memory.controlsUnlocked = true;
+            if (state.mode === 'memory') {
+              memoryControls.classList.add('visible');
+              playArea.classList.add('controls-on');
+              applyMemoryBoardFit();
+            }
+          }
+
+          function onMemoryCard(element, card) {
+            unlockAudio();
+            if (state.mode !== 'memory' || state.memory.lock || card.matched || element.classList.contains('open') || element.classList.contains('match')) return;
+            element.classList.add('open');
+            state.memory.open.push({ element: element, card: card });
+            if (state.memory.open.length !== 2) return;
+            state.memory.lock = true;
+            const first = state.memory.open[0];
+            const second = state.memory.open[1];
+            if (first.card.key === second.card.key) {
+              gameTimeout(function () {
+                first.card.matched = true;
+                second.card.matched = true;
+                first.element.classList.remove('open');
+                second.element.classList.remove('open');
+                first.element.classList.add('match');
+                second.element.classList.add('match');
+                state.memory.found += 1;
+                updateMemoryHud();
+                playCoinSound();
+                speak(first.card.label);
+                showMemoryTyped(first.card.label);
+                state.memory.open = [];
+                state.memory.lock = false;
+                applyMemoryBoardFit();
+                if (state.memory.found === state.memory.pairs) {
+                  state.memory.levelCompleted = true;
+                  if (state.memory.level === 1) unlockMemoryControls();
+                  nextBtn.disabled = false;
+                  playWinSound();
+                  const nextLevel = state.memory.pairs >= ANIMALS_MASTER.length ? 1 : state.memory.level + 1;
+                  memoryWinMsg.textContent = state.memory.pairs >= ANIMALS_MASTER.length ? 'Je hebt alles gevonden!' : 'Op naar level ' + nextLevel + '!';
+                  gameTimeout(function () { memoryWin.classList.add('show'); }, 500);
+                }
+              }, 260);
+            } else {
+              playWrongSound();
+              speak('Helaas, probeer opnieuw');
+              gameTimeout(function () {
+                first.element.classList.remove('open');
+                second.element.classList.remove('open');
+                state.memory.open = [];
+                state.memory.lock = false;
+              }, 760);
+            }
+          }
+
+          function startMemory() { startScreen.classList.add('hide'); showMode('memory'); buildMemoryLevel(); }
+          function restartMemory() { memoryWin.classList.remove('show'); buildMemoryLevel(); }
+          function nextMemoryLevel() {
+            if (!state.memory.levelCompleted) return;
+            memoryWin.classList.remove('show');
+            if (state.memory.pairs < ANIMALS_MASTER.length) { state.memory.level += 1; state.memory.pairs += 1; }
+            else { state.memory.level = 1; state.memory.pairs = 2; }
+            buildMemoryLevel();
+          }
+
+          function makeCountQuestion() {
+            const max = Math.min(10 + (state.count.level - 1) * 2, 20);
+            const a = Math.floor(Math.random() * max) + 1;
+            const b = Math.floor(Math.random() * max) + 1;
+            const answer = a + b;
+            const options = shuffle([answer, answer + 1, answer - 1, answer + 2, answer - 2]).filter(function (v, i, arr) { return v > 0 && v <= 40 && arr.indexOf(v) === i; }).slice(0, 3);
+            if (options.indexOf(answer) === -1) options[0] = answer;
+            state.count.question = { a: a, b: b, answer: answer, options: shuffle(options) };
+          }
+
+          function updateCountXp() {
+            const totalXp = state.count.totalRounds * 10;
+            const currentXp = state.count.correct * 10;
+            countXpFill.style.width = Math.min(100, (currentXp / totalXp) * 100) + '%';
+            countXpText.textContent = 'XP: ' + currentXp + ' / ' + totalXp;
+            renderGameLevelBar(countLevelbar, state.count.correct, state.count.totalRounds);
+          }
+
+          function updateCountHud() {
+            const totalXp = state.count.totalRounds * 10;
+            const currentXp = state.count.correct * 10;
+            const shownQuestion = Math.min(state.count.round + 1, state.count.totalRounds);
+            setHud('Level', String(state.count.level), 'Vraag', shownQuestion + '/' + state.count.totalRounds, 'XP', currentXp + '/' + totalXp);
+            updateCountXp();
+          }
+
+          function renderCountQuestion() {
+            const q = state.count.question;
+            countQuestionEl.textContent = 'Wat is ' + q.a + ' + ' + q.b + '?';
+            countHelpEl.textContent = 'Kies het goede antwoord';
+            countAnswersEl.innerHTML = '';
+            q.options.forEach(function (value) {
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'answer-btn';
+              btn.dataset.value = String(value);
+              btn.innerHTML = '<div class="answer-card"><div class="answer-value">' + value + '</div></div>';
+              btn.addEventListener('click', function () { onCountAnswer(value); });
+              countAnswersEl.appendChild(btn);
+            });
+            speak(countQuestionEl.textContent);
+          }
+
+          function startCountLevel() {
+            state.count.round = 0;
+            state.count.correct = 0;
+            state.count.answerLocked = false;
+            updateCountHud();
+            makeCountQuestion();
+            renderCountQuestion();
+          }
+
+          function startCounting() { startScreen.classList.add('hide'); showMode('count'); state.count.level = 1; startCountLevel(); }
+
+          function onCountAnswer(value) {
+            if (state.mode !== 'count' || state.count.answerLocked) return;
+            state.count.answerLocked = true;
+            const good = value === state.count.question.answer;
+            countAnswersEl.querySelectorAll('.answer-btn').forEach(function (btn) {
+              btn.disabled = true;
+              const btnValue = Number(btn.dataset.value || '0');
+              if (btnValue === state.count.question.answer) btn.classList.add('correct');
+              if (btnValue === value && value !== state.count.question.answer) btn.classList.add('wrong');
+            });
+            if (good) {
+              state.count.correct += 1;
+              playCoinSound();
+              speak('Ja, ' + state.count.question.answer);
+              countResultTitle.textContent = 'Goed gedaan!';
+              countResultText.textContent = 'Ja, ' + state.count.question.answer + ' is goed! Volgende vraag!';
+              state.count.pendingAction = 'next';
+            } else {
+              playWrongSound();
+              speak('Dat is fout');
+              countResultTitle.textContent = 'Dat is fout';
+              countResultText.textContent = 'Het juiste antwoord is ' + state.count.question.answer + '.';
+              state.count.pendingAction = 'next';
+            }
+            state.count.round += 1;
+            updateCountHud();
+            if (state.count.round >= state.count.totalRounds) {
+              countResultTitle.textContent = 'Level klaar!';
+              countResultText.textContent = 'Je had ' + state.count.correct + ' van de ' + state.count.totalRounds + ' goed. Op naar level ' + (state.count.level + 1) + '!';
+              state.count.pendingAction = 'levelup';
+              playWinSound();
+            }
+            gameTimeout(function () { countResult.classList.add('show'); }, 320);
+          }
+
+          function advanceCount() {
+            countResult.classList.remove('show');
+            state.count.answerLocked = false;
+            if (state.count.pendingAction === 'levelup') {
+              state.count.level += 1;
+              startCountLevel();
+              showBubble('Level ' + state.count.level);
+              return;
+            }
+            makeCountQuestion();
+            renderCountQuestion();
+          }
+
+          function buildLettersSession() {
+            const totalQ = LETTERS_LEVELS[state.letters.level - 1] || 3;
+            let session = [];
+            while (session.length < totalQ) session = session.concat(shuffle(LETTERS_QUESTIONS));
+            state.letters.session = session.slice(0, totalQ);
+          }
+
+          function renderLettersLevelBar() { renderGameLevelBar(lettersLevelbar, state.letters.correct, state.letters.session.length || (LETTERS_LEVELS[state.letters.level - 1] || 3)); }
+          function updateLettersHud() {
+            const totalQ = state.letters.session.length || (LETTERS_LEVELS[state.letters.level - 1] || 3);
+            setHud('Level', String(state.letters.level), 'Vraag', (state.letters.currentQuestion + 1) + '/' + totalQ, 'XP', state.letters.xp + '/' + (totalQ * 10));
+            lettersProgress.textContent = 'Goed: ' + state.letters.correct + ' / ' + totalQ;
+            lettersXpFill.style.width = Math.min(100, (state.letters.xp / (totalQ * 10)) * 100) + '%';
+            renderLettersLevelBar();
+          }
+
+          function renderLettersQuestion() {
+            const q = state.letters.session[state.letters.currentQuestion];
+            lettersQuestionEl.textContent = q.text;
+            lettersHelp.textContent = 'Kies het goede antwoord';
+            lettersNextBtn.classList.remove('show');
+            lettersAnswersEl.innerHTML = '';
+            q.answers.forEach(function (value, index) {
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'letters-answer-btn';
+              btn.dataset.index = String(index);
+              btn.innerHTML = '<div class="answer-card"><div class="answer-value">' + value + '</div></div>';
+              btn.addEventListener('click', function () { onLettersAnswer(index, btn); });
+              lettersAnswersEl.appendChild(btn);
+            });
+            speak(q.text);
+          }
+
+          function startLettersLevel() {
+            state.letters.currentQuestion = 0;
+            state.letters.correct = 0;
+            state.letters.wrong = 0;
+            state.letters.xp = 0;
+            state.letters.answerLocked = false;
+            buildLettersSession();
+            updateLettersHud();
+            renderLettersQuestion();
+          }
+
+          function startLetters() { startScreen.classList.add('hide'); showMode('letters'); if (state.letters.level < 1) state.letters.level = 1; startLettersLevel(); }
+
+          function onLettersAnswer(index, clickedBtn) {
+            if (state.mode !== 'letters' || state.letters.answerLocked) return;
+            const q = state.letters.session[state.letters.currentQuestion];
+            if (index === q.correct) {
+              state.letters.answerLocked = true;
+              state.letters.correct += 1;
+              state.letters.xp += 10;
+              lettersAnswersEl.querySelectorAll('.letters-answer-btn').forEach(function (btn, btnIndex) {
+                btn.disabled = true;
+                if (btnIndex === q.correct) btn.classList.add('correct');
+              });
+              playCoinSound();
+              speak('Goed gedaan plus tien XP');
+              lettersHelp.textContent = 'Goed gedaan!';
+              updateLettersHud();
+              lettersStepText.textContent = state.letters.currentQuestion + 1 >= state.letters.session.length ? 'Op naar de level-afronding!' : 'Op naar de volgende vraag!';
+              gameTimeout(function () { lettersStepResult.classList.add('show'); }, 280);
+            } else {
+              state.letters.wrong += 1;
+              clickedBtn.classList.add('wrong');
+              playWrongSound();
+              speak('Probeer opnieuw');
+              lettersHelp.textContent = 'Probeer opnieuw';
+              gameTimeout(function () { clickedBtn.classList.remove('wrong'); }, 700);
+            }
+          }
+
+          function nextLettersQuestion() {
+            if (!state.letters.answerLocked) return;
+            lettersStepResult.classList.remove('show');
+            state.letters.currentQuestion += 1;
+            if (state.letters.currentQuestion >= state.letters.session.length) {
+              lettersResultTitle.textContent = 'Goed gedaan!';
+              lettersResultText.textContent = 'Goed: ' + state.letters.correct + ' • Fout: ' + state.letters.wrong + '\nTotaal vragen: ' + state.letters.session.length;
+              lettersLevelupBtn.textContent = state.letters.level >= 10 ? 'Blijf oefenen' : 'Volgend level ▶';
+              lettersResult.classList.add('show');
+              playWinSound();
+              return;
+            }
+            state.letters.answerLocked = false;
+            updateLettersHud();
+            renderLettersQuestion();
+          }
+
+          function lettersLevelUp() { lettersResult.classList.remove('show'); if (state.letters.level < 10) state.letters.level += 1; startLettersLevel(); }
+          function retryLettersLevel() { lettersResult.classList.remove('show'); startLettersLevel(); }
+
+          function buildSoundSession() {
+            const totalQ = SOUND_LEVELS[state.sound.level - 1] || 5;
+            let session = [];
+            while (session.length < totalQ) session = session.concat(shuffle(ANIMALS_MASTER));
+            state.sound.session = session.slice(0, totalQ);
+          }
+
+          function renderSoundLevelBar() { renderGameLevelBar(soundLevelbar, state.sound.correct, state.sound.session.length || (SOUND_LEVELS[state.sound.level - 1] || 5)); }
+          function updateSoundHud() {
+            const totalQ = state.sound.session.length || (SOUND_LEVELS[state.sound.level - 1] || 5);
+            setHud('Level', String(state.sound.level), 'Vraag', (state.sound.currentQuestion + 1) + '/' + totalQ, 'XP', state.sound.xp + '/' + (totalQ * 10));
+            soundProgress.textContent = 'Goed: ' + state.sound.correct + ' / ' + totalQ;
+            soundXpFill.style.width = Math.min(100, (state.sound.xp / (totalQ * 10)) * 100) + '%';
+            renderSoundLevelBar();
+          }
+
+          function playSoundPrompt() { const q = state.sound.session[state.sound.currentQuestion]; if (q) speak(q.label); }
+
+          function renderSoundQuestion() {
+            const q = state.sound.session[state.sound.currentQuestion];
+            if (!q) return;
+            soundQuestionEl.textContent = 'Wat hoor je?';
+            soundHelp.textContent = 'Luister en kies het goede dier';
+            soundAnswersEl.innerHTML = '';
+            const optionsPool = shuffle(ANIMALS_MASTER.filter(function (item) { return item.label !== q.label; })).slice(0, 3);
+            const options = shuffle([q].concat(optionsPool));
+            options.forEach(function (item) {
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'sound-answer-btn';
+              btn.dataset.label = item.label;
+              btn.innerHTML = '<div class="sound-answer-card"><div class="sound-answer-image"><img src="' + item.img + '" alt="' + item.label + '"></div><div class="sound-answer-label">' + item.label + '</div></div>';
+              btn.addEventListener('click', function () { onSoundAnswer(item.label, btn); });
+              soundAnswersEl.appendChild(btn);
+            });
+            gameTimeout(playSoundPrompt, 180);
+          }
+
+          function startSoundLevel() {
+            state.sound.currentQuestion = 0;
+            state.sound.correct = 0;
+            state.sound.wrong = 0;
+            state.sound.xp = 0;
+            state.sound.answerLocked = false;
+            buildSoundSession();
+            updateSoundHud();
+            renderSoundQuestion();
+          }
+
+          function startSoundGame() { startScreen.classList.add('hide'); showMode('sound'); if (state.sound.level < 1) state.sound.level = 1; startSoundLevel(); }
+
+          function onSoundAnswer(label, clickedBtn) {
+            if (state.mode !== 'sound' || state.sound.answerLocked) return;
+            const q = state.sound.session[state.sound.currentQuestion];
+            if (!q) return;
+            if (label === q.label) {
+              state.sound.answerLocked = true;
+              state.sound.correct += 1;
+              state.sound.xp += 10;
+              soundAnswersEl.querySelectorAll('.sound-answer-btn').forEach(function (btn) {
+                btn.disabled = true;
+                if (btn.dataset.label === q.label) btn.classList.add('correct');
+              });
+              playCoinSound();
+              speak('Goed gedaan! Dat is ' + q.label);
+              soundHelp.textContent = 'Goed gedaan!';
+              updateSoundHud();
+              soundStepText.textContent = state.sound.currentQuestion + 1 >= state.sound.session.length ? 'Op naar de level-afronding!' : 'Op naar de volgende vraag!';
+              gameTimeout(function () { soundStepResult.classList.add('show'); }, 280);
+            } else {
+              state.sound.wrong += 1;
+              clickedBtn.classList.add('wrong');
+              playWrongSound();
+              speak('Probeer opnieuw');
+              soundHelp.textContent = 'Probeer opnieuw';
+              gameTimeout(function () { clickedBtn.classList.remove('wrong'); }, 700);
+            }
+          }
+
+          function nextSoundQuestion() {
+            if (!state.sound.answerLocked) return;
+            soundStepResult.classList.remove('show');
+            state.sound.currentQuestion += 1;
+            if (state.sound.currentQuestion >= state.sound.session.length) {
+              soundResultTitle.textContent = 'Goed gedaan!';
+              soundResultText.textContent = 'Goed: ' + state.sound.correct + ' • Fout: ' + state.sound.wrong + '\nTotaal vragen: ' + state.sound.session.length;
+              soundLevelupBtn.textContent = state.sound.level >= 10 ? 'Blijf oefenen' : 'Volgend level ▶';
+              soundResult.classList.add('show');
+              playWinSound();
+              return;
+            }
+            state.sound.answerLocked = false;
+            updateSoundHud();
+            renderSoundQuestion();
+          }
+
+          function soundLevelUp() { soundResult.classList.remove('show'); if (state.sound.level < 10) state.sound.level += 1; startSoundLevel(); }
+          function retrySoundLevel() { soundResult.classList.remove('show'); startSoundLevel(); }
+
+          function buildAnimalwordSession() {
+            const totalQ = ANIMALWORD_LEVELS[state.animalword.level - 1] || 4;
+            let session = [];
+            while (session.length < totalQ) session = session.concat(shuffle(ANIMALS_MASTER));
+            state.animalword.session = session.slice(0, totalQ);
+          }
+
+          function renderAnimalwordLevelBar() { renderGameLevelBar(animalwordLevelbar, state.animalword.correct, state.animalword.session.length || (ANIMALWORD_LEVELS[state.animalword.level - 1] || 4)); }
+          function updateAnimalwordHud() {
+            const totalQ = state.animalword.session.length || (ANIMALWORD_LEVELS[state.animalword.level - 1] || 4);
+            setHud('Level', String(state.animalword.level), 'Vraag', (state.animalword.currentQuestion + 1) + '/' + totalQ, 'XP', state.animalword.xp + '/' + (totalQ * 10));
+            animalwordProgress.textContent = 'Goed: ' + state.animalword.correct + ' / ' + totalQ;
+            animalwordXpFill.style.width = Math.min(100, (state.animalword.xp / (totalQ * 10)) * 100) + '%';
+            renderAnimalwordLevelBar();
+          }
+
+          function makeAnimalwordLetterPool(answer) {
+            const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            const needed = Math.max(answer.length + 3, 8);
+            const pool = answer.toUpperCase().split('');
+            while (pool.length < needed) pool.push(alphabet[Math.floor(Math.random() * alphabet.length)]);
+            return shuffle(pool).slice(0, needed);
+          }
+
+          function renderAnimalwordSlots(answer, built) {
+            animalwordSlotsEl.innerHTML = '';
+            answer.split('').forEach(function (_, index) {
+              const slot = document.createElement('div');
+              slot.className = 'animalword-slot' + (built[index] ? ' filled' : '');
+              slot.textContent = built[index] || '';
+              animalwordSlotsEl.appendChild(slot);
+            });
+          }
+
+          function renderAnimalwordQuestion() {
+            const q = state.animalword.session[state.animalword.currentQuestion];
+            if (!q) return;
+            state.animalword.built = [];
+            state.animalword.answerLocked = false;
+            animalwordQuestionEl.textContent = 'Welk dier is dit?';
+            animalwordHelp.textContent = 'Tik de letters van het dier';
+            animalwordPreviewEl.innerHTML = '<img src="' + q.img + '" alt="' + q.label + '">';
+            renderAnimalwordSlots(q.label.toUpperCase(), state.animalword.built);
+            const pool = makeAnimalwordLetterPool(q.label);
+            animalwordLetterbankEl.innerHTML = '';
+            pool.forEach(function (letter) {
+              const btn = document.createElement('button');
+              btn.type = 'button';
+              btn.className = 'animalword-letter';
+              btn.textContent = letter;
+              btn.addEventListener('click', function () { onAnimalwordLetter(letter, btn); });
+              animalwordLetterbankEl.appendChild(btn);
+            });
+            speak(q.label);
+          }
+
+          function resetAnimalwordInput() {
+            if (state.animalword.answerLocked) return;
+            state.animalword.built = [];
+            animalwordLetterbankEl.querySelectorAll('.animalword-letter').forEach(function (btn) { btn.disabled = false; });
+            const q = state.animalword.session[state.animalword.currentQuestion];
+            if (q) renderAnimalwordSlots(q.label.toUpperCase(), state.animalword.built);
+            animalwordHelp.textContent = 'Tik de letters van het dier';
+          }
+
+          function onAnimalwordLetter(letter, btn) {
+            if (state.mode !== 'animalword' || state.animalword.answerLocked) return;
+            const q = state.animalword.session[state.animalword.currentQuestion];
+            if (!q) return;
+            state.animalword.built.push(letter);
+            btn.disabled = true;
+            renderAnimalwordSlots(q.label.toUpperCase(), state.animalword.built);
+            if (state.animalword.built.length < q.label.length) return;
+            const guess = state.animalword.built.join('').toLowerCase();
+            const answer = q.label.toLowerCase();
+            if (guess === answer) {
+              state.animalword.answerLocked = true;
+              state.animalword.correct += 1;
+              state.animalword.xp += 10;
+              playCoinSound();
+              speak('Ja, ' + q.label);
+              animalwordHelp.textContent = 'Goed gedaan!';
+              updateAnimalwordHud();
+              animalwordStepText.textContent = 'Ja, ' + q.label + ' is goed gespeld!';
+              gameTimeout(function () { animalwordStepResult.classList.add('show'); }, 280);
+            } else {
+              state.animalword.wrong += 1;
+              playWrongSound();
+              speak('Probeer opnieuw');
+              animalwordHelp.textContent = 'Probeer opnieuw';
+              gameTimeout(resetAnimalwordInput, 700);
+            }
+          }
+
+          function startAnimalwordLevel() {
+            state.animalword.currentQuestion = 0;
+            state.animalword.correct = 0;
+            state.animalword.wrong = 0;
+            state.animalword.xp = 0;
+            state.animalword.answerLocked = false;
+            buildAnimalwordSession();
+            updateAnimalwordHud();
+            renderAnimalwordQuestion();
+          }
+
+          function startAnimalwordGame() { startScreen.classList.add('hide'); showMode('animalword'); if (state.animalword.level < 1) state.animalword.level = 1; startAnimalwordLevel(); }
+
+          function nextAnimalwordQuestion() {
+            if (!state.animalword.answerLocked) return;
+            animalwordStepResult.classList.remove('show');
+            state.animalword.currentQuestion += 1;
+            if (state.animalword.currentQuestion >= state.animalword.session.length) {
+              animalwordResultTitle.textContent = 'Goed gedaan!';
+              animalwordResultText.textContent = 'Goed: ' + state.animalword.correct + ' • Fout: ' + state.animalword.wrong + '\nTotaal vragen: ' + state.animalword.session.length;
+              animalwordLevelupBtn.textContent = state.animalword.level >= 10 ? 'Blijf oefenen' : 'Volgend level ▶';
+              animalwordResult.classList.add('show');
+              playWinSound();
+              return;
+            }
+            state.animalword.answerLocked = false;
+            updateAnimalwordHud();
+            renderAnimalwordQuestion();
+          }
+
+          function animalwordLevelUp() { animalwordResult.classList.remove('show'); if (state.animalword.level < 10) state.animalword.level += 1; startAnimalwordLevel(); }
+          function retryAnimalwordLevel() { animalwordResult.classList.remove('show'); startAnimalwordLevel(); }
+          function getAnimalInitial(label) { return (label || '').trim().charAt(0).toUpperCase(); }
+
+          function buildLetterdragSession() {
+            const totalQ = LETTERDRAG_LEVELS[state.letterdrag.level - 1] || 4;
+            let session = [];
+            while (session.length < totalQ) session = session.concat(shuffle(ANIMALS_MASTER));
+            state.letterdrag.session = session.slice(0, totalQ);
+          }
+
+          function renderLetterdragLevelBar() { renderGameLevelBar(letterdragLevelbar, state.letterdrag.correct, state.letterdrag.session.length || (LETTERDRAG_LEVELS[state.letterdrag.level - 1] || 4)); }
+          function updateLetterdragHud() {
+            const totalQ = state.letterdrag.session.length || (LETTERDRAG_LEVELS[state.letterdrag.level - 1] || 4);
+            setHud('Level', String(state.letterdrag.level), 'Vraag', (state.letterdrag.currentQuestion + 1) + '/' + totalQ, 'XP', state.letterdrag.xp + '/' + (totalQ * 10));
+            letterdragProgress.textContent = 'Goed: ' + state.letterdrag.correct + ' / ' + totalQ;
+            letterdragXpFill.style.width = Math.min(100, (state.letterdrag.xp / (totalQ * 10)) * 100) + '%';
+            renderLetterdragLevelBar();
+          }
+
+          function setLetterdragLetterPosition(x, y) { letterdragLetterEl.style.left = x + 'px'; letterdragLetterEl.style.top = y + 'px'; }
+          function resetLetterdragLetterPosition() {
+            letterdragLetterEl.style.position = 'relative';
+            letterdragLetterEl.style.left = '0px';
+            letterdragLetterEl.style.top = '0px';
+            letterdragLetterEl.classList.remove('dragging');
+          }
+
+          function clearLetterdragTargetStates() {
+            letterdragTargetsEl.querySelectorAll('.letterdrag-target').forEach(function (el) { el.classList.remove('active', 'correct', 'wrong'); });
+          }
+
+          function renderLetterdragQuestion() {
+            const q = state.letterdrag.session[state.letterdrag.currentQuestion];
+            if (!q) return;
+            state.letterdrag.answerLocked = false;
+            state.letterdrag.dragData = null;
+            letterdragQuestionEl.textContent = 'Sleep de letter naar het juiste dier';
+            letterdragHelpEl.textContent = 'Sleep de letter ' + getAnimalInitial(q.label) + ' naar het goede dier';
+            letterdragLetterEl.textContent = getAnimalInitial(q.label);
+            resetLetterdragLetterPosition();
+            const optionsPool = shuffle(ANIMALS_MASTER.filter(function (item) { return getAnimalInitial(item.label) !== getAnimalInitial(q.label); })).slice(0, 2);
+            const options = shuffle([q].concat(optionsPool));
+            letterdragTargetsEl.innerHTML = '';
+            options.forEach(function (item) {
+              const el = document.createElement('div');
+              el.className = 'letterdrag-target';
+              el.dataset.label = item.label;
+              el.innerHTML = '<div class="letterdrag-targetimg"><img src="' + item.img + '" alt="' + item.label + '"></div><div class="letterdrag-targetlabel">' + item.label + '</div>';
+              letterdragTargetsEl.appendChild(el);
+            });
+            speak(getAnimalInitial(q.label));
+          }
+
+          function startLetterdragLevel() {
+            state.letterdrag.currentQuestion = 0;
+            state.letterdrag.correct = 0;
+            state.letterdrag.wrong = 0;
+            state.letterdrag.xp = 0;
+            state.letterdrag.answerLocked = false;
+            buildLetterdragSession();
+            updateLetterdragHud();
+            renderLetterdragQuestion();
+          }
+
+          function startLetterdragGame() { startScreen.classList.add('hide'); showMode('letterdrag'); if (state.letterdrag.level < 1) state.letterdrag.level = 1; startLetterdragLevel(); }
+
+          function handleLetterdragDrop(targetEl) {
+            if (state.mode !== 'letterdrag' || state.letterdrag.answerLocked) return;
+            const q = state.letterdrag.session[state.letterdrag.currentQuestion];
+            if (!q || !targetEl) return;
+            clearLetterdragTargetStates();
+            const good = targetEl.dataset.label === q.label;
+            if (good) {
+              state.letterdrag.answerLocked = true;
+              state.letterdrag.correct += 1;
+              state.letterdrag.xp += 10;
+              targetEl.classList.add('correct');
+              playCoinSound();
+              speak('Ja, ' + q.label);
+              letterdragHelpEl.textContent = 'Goed gedaan! ' + getAnimalInitial(q.label) + ' van ' + q.label;
+              updateLetterdragHud();
+              letterdragStepText.textContent = getAnimalInitial(q.label) + ' hoort bij ' + q.label + '!';
+              gameTimeout(function () { letterdragStepResult.classList.add('show'); }, 260);
+            } else {
+              state.letterdrag.wrong += 1;
+              targetEl.classList.add('wrong');
+              playWrongSound();
+              speak('Probeer opnieuw');
+              letterdragHelpEl.textContent = 'Probeer opnieuw';
+              gameTimeout(clearLetterdragTargetStates, 650);
+            }
+          }
+
+          function nextLetterdragQuestion() {
+            if (!state.letterdrag.answerLocked) return;
+            letterdragStepResult.classList.remove('show');
+            state.letterdrag.currentQuestion += 1;
+            if (state.letterdrag.currentQuestion >= state.letterdrag.session.length) {
+              letterdragResultTitle.textContent = 'Goed gedaan!';
+              letterdragResultText.textContent = 'Goed: ' + state.letterdrag.correct + ' • Fout: ' + state.letterdrag.wrong + '\nTotaal vragen: ' + state.letterdrag.session.length;
+              letterdragLevelupBtn.textContent = state.letterdrag.level >= 10 ? 'Blijf oefenen' : 'Volgend level ▶';
+              letterdragResult.classList.add('show');
+              playWinSound();
+              return;
+            }
+            state.letterdrag.answerLocked = false;
+            updateLetterdragHud();
+            renderLetterdragQuestion();
+          }
+
+          function letterdragLevelUp() { letterdragResult.classList.remove('show'); if (state.letterdrag.level < 10) state.letterdrag.level += 1; startLetterdragLevel(); }
+          function retryLetterdragLevel() { letterdragResult.classList.remove('show'); startLetterdragLevel(); }
+
+          function goHomeMenu() {
+            memoryWin.classList.remove('show');
+            countResult.classList.remove('show');
+            lettersResult.classList.remove('show');
+            lettersStepResult.classList.remove('show');
+            soundResult.classList.remove('show');
+            soundStepResult.classList.remove('show');
+            animalwordResult.classList.remove('show');
+            animalwordStepResult.classList.remove('show');
+            letterdragResult.classList.remove('show');
+            letterdragStepResult.classList.remove('show');
+            bubble.classList.remove('show');
+            memoryTyped.classList.remove('show');
+            memoryTyped.textContent = '';
+            if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+            startScreen.classList.remove('hide');
+            showMode(null);
+          }
+
+          menuMemoryButton.addEventListener('click', startMemory);
+          menuTellenButton.addEventListener('click', startCounting);
+          menuLettersButton.addEventListener('click', startLetters);
+          menuSoundButton.addEventListener('click', startSoundGame);
+          menuAnimalwordButton.addEventListener('click', startAnimalwordGame);
+          menuLetterdragButton.addEventListener('click', startLetterdragGame);
+          memoryAgain.addEventListener('click', nextMemoryLevel);
+          nextBtn.addEventListener('click', nextMemoryLevel);
+          restartBtn.addEventListener('click', restartMemory);
+          topHomeBtn.addEventListener('click', goHomeMenu);
+          countNextBtn.addEventListener('click', advanceCount);
+          lettersNextBtn.addEventListener('click', nextLettersQuestion);
+          lettersStepNextBtn.addEventListener('click', nextLettersQuestion);
+          lettersLevelupBtn.addEventListener('click', lettersLevelUp);
+          lettersRetryBtn.addEventListener('click', retryLettersLevel);
+          soundReplayBtn.addEventListener('click', playSoundPrompt);
+          soundStepNextBtn.addEventListener('click', nextSoundQuestion);
+          soundLevelupBtn.addEventListener('click', soundLevelUp);
+          soundRetryBtn.addEventListener('click', retrySoundLevel);
+          animalwordResetBtn.addEventListener('click', resetAnimalwordInput);
+          animalwordStepNextBtn.addEventListener('click', nextAnimalwordQuestion);
+          animalwordLevelupBtn.addEventListener('click', animalwordLevelUp);
+          animalwordRetryBtn.addEventListener('click', retryAnimalwordLevel);
+          letterdragStepNextBtn.addEventListener('click', nextLetterdragQuestion);
+          letterdragLevelupBtn.addEventListener('click', letterdragLevelUp);
+          letterdragRetryBtn.addEventListener('click', retryLetterdragLevel);
+
+          if (letterdragLetterEl) {
+            const startDrag = function (clientX, clientY) {
+              if (state.mode !== 'letterdrag' || state.letterdrag.answerLocked) return;
+              const rect = letterdragLetterEl.getBoundingClientRect();
+              state.letterdrag.dragData = { offsetX: clientX - rect.left, offsetY: clientY - rect.top };
+              letterdragLetterEl.style.position = 'fixed';
+              letterdragLetterEl.style.zIndex = '30';
+              letterdragLetterEl.classList.add('dragging');
+              setLetterdragLetterPosition(clientX - state.letterdrag.dragData.offsetX, clientY - state.letterdrag.dragData.offsetY);
+            };
+            const moveDrag = function (clientX, clientY) {
+              if (!state.letterdrag.dragData) return;
+              setLetterdragLetterPosition(clientX - state.letterdrag.dragData.offsetX, clientY - state.letterdrag.dragData.offsetY);
+              clearLetterdragTargetStates();
+              const hovered = document.elementFromPoint(clientX, clientY);
+              const target = hovered ? hovered.closest('.letterdrag-target') : null;
+              if (target) target.classList.add('active');
+            };
+            const endDrag = function (clientX, clientY) {
+              if (!state.letterdrag.dragData) return;
+              const hovered = document.elementFromPoint(clientX, clientY);
+              const target = hovered ? hovered.closest('.letterdrag-target') : null;
+              resetLetterdragLetterPosition();
+              state.letterdrag.dragData = null;
+              if (target) handleLetterdragDrop(target); else clearLetterdragTargetStates();
+            };
+            letterdragLetterEl.addEventListener('pointerdown', function (event) { event.preventDefault(); startDrag(event.clientX, event.clientY); });
+            window.addEventListener('pointermove', function (event) { if (state.letterdrag.dragData) moveDrag(event.clientX, event.clientY); });
+            window.addEventListener('pointercancel', function () { resetLetterdragLetterPosition(); state.letterdrag.dragData = null; clearLetterdragTargetStates(); });
+            window.addEventListener('pointerup', function (event) { if (state.letterdrag.dragData) endDrag(event.clientX, event.clientY); });
+          }
+
+          root.addEventListener('pointerdown', unlockAudio, { once: true });
+          window.addEventListener('resize', applyMemoryBoardFit);
+          window.addEventListener('orientationchange', function () { setTimeout(applyMemoryBoardFit, 100); });
+
+          console.assert(typeof startMemory === 'function', 'startMemory moet bestaan');
+          console.assert(typeof startCounting === 'function', 'startCounting moet bestaan');
+          console.assert(typeof startLetters === 'function', 'startLetters moet bestaan');
+          console.assert(typeof startSoundGame === 'function', 'startSoundGame moet bestaan');
+          console.assert(typeof startAnimalwordGame === 'function', 'startAnimalwordGame moet bestaan');
+          console.assert(typeof startLetterdragGame === 'function', 'startLetterdragGame moet bestaan');
+          console.assert(shuffle([1,2,3,4]).length === 4, 'shuffle test mislukt');
+          console.assert(('Goed: 1 • Fout: 0\nTotaal vragen: 3').indexOf('\n') > -1, 'newline string test mislukt');
+
+          updateMemoryHud();
+          showMode(null);
+          startScreen.classList.remove('hide');
+          if (window.ResizeObserver) new ResizeObserver(applyMemoryBoardFit).observe(boardWrap);
+        }());
+      </script>
+    </div>
+  </main>
+</div>
+
+</body>
+</html>
